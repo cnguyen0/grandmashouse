@@ -1,20 +1,18 @@
 import React, { Component } from 'react';
+import ReactDOM from 'react-dom';
 import logo from './logo.svg';
 import './App.css';
-import Bootstrap from 'bootstrap/dist/css/bootstrap.css'
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+//example [delete later]:
+import RaisedButton from 'material-ui/RaisedButton';
 
 class App extends Component {
   render() {
     return (
-      <div class="container">
-        <div class="jumbotron">
-          <h1>Bootstrap Tutorial</h1>
-          <p>Bootstrap is the most popular HTML, CSS, and JS framework for developing
-          responsive, mobile-first projects on the web.</p>
-        </div>
-        <p>This is some text.</p>
-        <p>This is another text.</p>
-      </div>
+      <MuiThemeProvider>
+        <RaisedButton label="Material-UI" />
+      </MuiThemeProvider>
+
     );
   }
 }
