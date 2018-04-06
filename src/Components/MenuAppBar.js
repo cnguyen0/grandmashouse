@@ -10,6 +10,7 @@ import AccountCircle from 'material-ui-icons/AccountCircle';
 import Switch from 'material-ui/Switch';
 import { FormControlLabel, FormGroup } from 'material-ui/Form';
 import Menu, { MenuItem } from 'material-ui/Menu';
+import Button from 'material-ui/Button';
 
 const styles = {
   root: {
@@ -65,6 +66,18 @@ class MenuAppBar extends React.Component {
             <Typography variant="title" color="inherit" className={classes.flex}>
               Grandma&#39;s House
             </Typography>
+              <Button variant="raised" color="primary" className={classes.button}>
+                Favorites
+              </Button>
+              <Button variant="raised" color="primary" className={classes.button}>
+                Reservations
+              </Button>
+              <Button variant="raised" color="primary" className={classes.button}>
+                Messages
+              </Button>
+              <Button variant="raised" color="secondary" className={classes.button}>
+                Become a Chef
+              </Button>
             {auth && (
               <div>
                 <IconButton

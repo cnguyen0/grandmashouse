@@ -6,6 +6,8 @@ import MenuAppBar from './MenuAppBar.js'
 // import GridList from './GridList.js'
 import MyMapComponent from './MyMapComponent.js'
 import IntegrationAutosuggest from './IntegrationAutosuggest.js'
+import TitlebarGridList from './TitlebarGridList.js'
+import Flexbox from 'flexbox-react';
 
 
 
@@ -30,8 +32,10 @@ class App extends Component {
       <div>
         <MenuAppBar />
         <IntegrationAutosuggest />
-        <MyMapComponent />
-        <ListingCard />
+        <Flexbox flexDirection="row" alignContent="stretch">
+          <MyMapComponent />
+          <TitlebarGridList />
+        </Flexbox>
       </div>
     );
   }
