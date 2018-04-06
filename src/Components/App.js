@@ -5,6 +5,7 @@ import ListingCard from './ListingCard.js'
 import MenuAppBar from './MenuAppBar.js'
 // import GridList from './GridList.js'
 import MyMapComponent from './MyMapComponent.js'
+import IntegrationAutosuggest from './IntegrationAutosuggest.js'
 
 
 
@@ -28,6 +29,7 @@ class App extends Component {
 
       <div>
         <MenuAppBar />
+        <IntegrationAutosuggest />
         <MyMapComponent />
         <ListingCard />
       </div>
