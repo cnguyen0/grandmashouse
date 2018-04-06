@@ -89,7 +89,7 @@ function TitlebarGridList(props) {
 
   return (
     <div className={classes.root}>
-      <GridList cellHeight={180} className={classes.gridList}>
+      <GridList cellHeight={300} className={classes.gridList} cellWidth={300}>
         <GridListTile key="Subheader" cols={2} style={{ height: 'auto' }}>
           <Subheader component="div">Search Results</Subheader>
         </GridListTile>

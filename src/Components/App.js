@@ -33,8 +33,8 @@ class App extends Component {
         <MenuAppBar />
         <IntegrationAutosuggest />
         <Flexbox flexDirection="row" alignContent="stretch">
-          <MyMapComponent />
           <TitlebarGridList />
+          <MyMapComponent />
         </Flexbox>
       </div>
     );
