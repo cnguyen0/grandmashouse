@@ -6,6 +6,7 @@ import { typography } from 'material-ui/styles';
 
 // Documentation here:
 // https://itnext.io/google-maps-react-makes-adding-google-maps-api-to-a-react-app-a-breeze-effb7b89e54
+// GoogleMapAPIKey =  AIzaSyBfGMqqe_6NDNVFg-7kWZCa-rEkzoUJ_hg 
 
 class GoogleMapsContainer extends React.Component {
   constructor(props) {
