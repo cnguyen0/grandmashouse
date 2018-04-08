@@ -48,6 +48,8 @@ class ListingCard extends React.Component {
   render() {
     const { classes } = this.props;
 
+    console.log(this.state.expanded);
+
     return (
       <div>
         <Card className={classes.card}>
@@ -62,7 +64,7 @@ class ListingCard extends React.Component {
                 <MoreVertIcon />
               </IconButton>
             }
-            title="Shrimp and Chorizo Paella"
+            title={this.props.usersFave.title}
             subheader="September 14, 2016"
           />
           <CardMedia
