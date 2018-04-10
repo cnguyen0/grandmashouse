@@ -3,30 +3,42 @@ import ReactDOM from 'react-dom';
 import './App.css';
 import ListingCard from './ListingCard.js'
 import MenuAppBar from './MenuAppBar.js'
-// import GridList from './GridList.js'
 import MyMapComponent from './MyMapComponent.js'
 import IntegrationAutosuggest from './IntegrationAutosuggest.js'
 import TitlebarGridList from './TitlebarGridList.js'
 import Flexbox from 'flexbox-react';
+import Footer from './Footer.js';
 
 
 
 class App extends Component {
-  // getRecipe = () => {
-  //   // api call to the database
-  //   // return object
-  // }
+  getRecipe = () => {
+    // api call to the database
+    // return object
+  }
+
+  getFavorites = () => {
+    // api get user's getFavorites
+    // return
+    return {
+      url: "www.google.com",
+      title: "my recipe"
+    }
+  }
 
 
   render() {
-    // let chefRecipe = getRecipe();
+    let chefRecipe = this.getRecipe();
+    let fave = this.getFavorites();
+    let isAdmin = true;
+
     return (
-    //   { isAdmin && this.chefRecipe.map(recipe, () => {
-    //       return (
-    //         <ListingCard url={recipe.url} description={recipe.description} />
-    //       )
-    //     })
-    //   }
+      // { isAdmin && this.chefRecipe.map(recipe, () => {
+      //     return (
+      //       <ListingCard url={recipe.url} description={recipe.description} />
+      //     )
+      //   })
+      // }
 
 
       <div>
@@ -36,6 +48,7 @@ class App extends Component {
           <TitlebarGridList />
           <MyMapComponent />
         </Flexbox>
+        <Footer />
       </div>
     );
   }
