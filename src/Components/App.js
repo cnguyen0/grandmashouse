@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import ReactDOM from 'react-dom';
 import './App.css';
 import ListingCard from './ListingCard.js'
 import MenuAppBar from './MenuAppBar.js'
@@ -8,6 +7,8 @@ import IntegrationAutosuggest from './IntegrationAutosuggest.js'
 import TitlebarGridList from './TitlebarGridList.js'
 import Flexbox from 'flexbox-react';
 import Footer from './Footer.js';
+
+import ContentPage from './ContentPage.js';
 
 
 
@@ -43,11 +44,14 @@ class App extends Component {
 
       <div>
         <MenuAppBar />
-        <IntegrationAutosuggest />
+        <ContentPage 
+          txtFile = 'termsofservice.txt'
+          title = {'Grandma\'s House Terms and Services'} />
+        {/* <IntegrationAutosuggest />
         <Flexbox flexDirection="row" alignContent="stretch">
           <TitlebarGridList />
           <MyMapComponent />
-        </Flexbox>
+        </Flexbox> */}
         <Footer />
       </div>
     );
