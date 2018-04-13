@@ -9,6 +9,7 @@ import Flexbox from 'flexbox-react';
 import Footer from './Footer.js';
 
 import ContentPage from './ContentPage.js';
+import LandingPage from './LandingPage';
 
 
 
@@ -44,9 +45,7 @@ class App extends Component {
 
       <div>
         <MenuAppBar />
-        <ContentPage 
-          txtFile = 'termsofservice.txt'
-          title = {'Grandma\'s House Terms and Services'} />
+        <LandingPage />
         {/* <IntegrationAutosuggest />
         <Flexbox flexDirection="row" alignContent="stretch">
           <TitlebarGridList />

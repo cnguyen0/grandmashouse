@@ -26,3 +26,49 @@
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
+
+/* Aindra's testing things */
+section {
+  padding: 48px;
+}
+
+#LandBackground {
+  background: url(http://www.petdoctorsupplyco.com/wp-content/uploads/2017/04/corgi-puppy.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: block;
+}
+
+#LandBackgroundContainer {
+  height: 90vh;
+  justify-content: center;
+  width: 70%;
+  margin: auto;
+  align-items: center;
+  max-width: 1280px;
+  display: flex;
+}
+
+#LandText {
+  text-align: center;
+}
+
+.LandButton {
+  position: relative;
+  display: inline-block;
+  text-decoration: none;
+  color: #fff;
+  background-color: #26a69a;
+  text-align: center;
+  letter-spacing: .5px;
+  margin: 10px;
+  border: none;
+  border-radius: 2px;
+  height: 36px;
+  line-height: 36px;
+  padding: 0 2rem;
+  text-transform: uppercase;
+  box-sizing: inherit;
+}
+/* end of Aindra's testing things */
