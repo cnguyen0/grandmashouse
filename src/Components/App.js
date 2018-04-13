@@ -7,7 +7,9 @@ import IntegrationAutosuggest from './IntegrationAutosuggest.js'
 import TitlebarGridList from './TitlebarGridList.js'
 import Flexbox from 'flexbox-react';
 import Footer from './Footer.js';
-
+import HowChef from "../img/How-it-works-Chef.jpg"
+import HowEater from "../img/How-it-works-Eater.jpg"
+import LearnMore from './LearnMore.js'
 import ContentPage from './ContentPage.js';
 
 
@@ -44,15 +46,8 @@ class App extends Component {
 
       <div>
         <MenuAppBar />
-        <ContentPage 
-          txtFile = 'termsofservice.txt'
-          title = {'Grandma\'s House Terms and Services'} />
-        {/* <IntegrationAutosuggest />
-        <Flexbox flexDirection="row" alignContent="stretch">
-          <TitlebarGridList />
-          <MyMapComponent />
-        </Flexbox> */}
-        <Footer />
+          <LearnMore
+            image = {HowChef} />
       </div>
     );
   }
