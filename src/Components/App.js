@@ -46,7 +46,7 @@ class App extends Component {
         <MenuAppBar />
         <ContentPage 
           txtFile = 'termsofservice.txt'
-          title = {'Grandma\'s House Terms and Services'} />
+          title = {'Grandma\'s House Terms of Services'} />
         {/* <IntegrationAutosuggest />
         <Flexbox flexDirection="row" alignContent="stretch">
           <TitlebarGridList />
