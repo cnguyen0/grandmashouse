@@ -72,3 +72,8 @@ section {
   box-sizing: inherit;
 }
 /* end of Aindra's testing things */
+
+#HomeBtn {
+  color: inherit; /* blue colors for links too */
+  text-decoration: inherit; /* no underline */
+}

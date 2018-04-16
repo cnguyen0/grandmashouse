@@ -68,7 +68,7 @@ class MenuAppBar extends React.Component {
               <MenuIcon />
             </IconButton>
             <Typography variant="title" color="inherit" className={classes.flex}>
-              Grandma&#39;s House
+              <a id='HomeBtn' href='/'>Grandma&#39;s House</a>
             </Typography>
               <Button variant="raised" color="primary" className={classes.button}>
                 Favorites
