@@ -2,6 +2,7 @@ import React from 'react'
 import { Switch, Route } from 'react-router-dom'
 import ContentPage from './ContentPage'
 import LandingPage from './LandingPage';
+import SignIn from './SignIn';
 
 
 const Terms = (props) => {
@@ -23,6 +24,7 @@ const Main = () => (
     <Switch>
       <Route exact path='/' component={LandingPage}/>
       <Route path='/terms' component={Terms}/>
+      <Route path='/signin' component={SignIn}/>
     </Switch>
   </main>
 )

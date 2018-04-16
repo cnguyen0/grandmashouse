@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { withStyles } from 'material-ui/styles';
 import AppBar from 'material-ui/AppBar';
@@ -11,6 +12,9 @@ import Switch from 'material-ui/Switch';
 import { FormControlLabel, FormGroup } from 'material-ui/Form';
 import Menu, { MenuItem } from 'material-ui/Menu';
 import Button from 'material-ui/Button';
+
+
+const SignIn = props => <Link to="/signin" {...props} />
 
 const styles = {
   root: {
@@ -50,14 +54,14 @@ class MenuAppBar extends React.Component {
 
     return (
       <div className={classes.root}>
-        <FormGroup>
+        {/* <FormGroup>
           <FormControlLabel
             control={
               <Switch checked={auth} onChange={this.handleChange} aria-label="LoginSwitch" />
             }
             label={auth ? 'Logout' : 'Login'}
           />
-        </FormGroup>
+        </FormGroup> */}
         <AppBar position="static">
           <Toolbar>
             <IconButton className={classes.menuButton} color="inherit" aria-label="Menu">
@@ -78,6 +82,10 @@ class MenuAppBar extends React.Component {
               <Button variant="raised" color="secondary" className={classes.button}>
                 Become a Chef
               </Button>
+              { !this.state.auth && <Button variant="raised" color="secondary" className={classes.button} component={SignIn}>
+                  Sign In
+                </Button>
+              }
             {auth && (
               <div>
                 <IconButton
@@ -104,6 +112,7 @@ class MenuAppBar extends React.Component {
                 >
                   <MenuItem onClick={this.handleClose}>Profile</MenuItem>
                   <MenuItem onClick={this.handleClose}>My account</MenuItem>
+                  <MenuItem onClick={this.handleChange}>Log off</MenuItem>
                 </Menu>
               </div>
             )}
