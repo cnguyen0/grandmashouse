@@ -4,7 +4,6 @@ import { withStyles } from 'material-ui/styles';
 import Paper from 'material-ui/Paper';
 import Typography from 'material-ui/Typography';
 import ListingCard from './ListingCard';
-import GridList, { GridListTile } from 'material-ui/GridList';
 
 // ROUTE localhost:3000/favorites
 
