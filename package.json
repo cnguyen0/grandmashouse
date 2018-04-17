@@ -6,6 +6,7 @@
     "autosuggest-highlight": "^3.1.1",
     "bootstrap": "^4.0.0",
     "flexbox-react": "^4.4.0",
+    "flexboxgrid": "^6.3.1",
     "google-map-react": "^0.34.0",
     "google-maps-react": "^1.1.11",
     "googlemaps": "^1.12.0",
