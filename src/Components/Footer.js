@@ -6,7 +6,7 @@ class Footer extends React.Component {
     return (
       <div>
         <footer>
-          <div class="container">
+          <div className="container">
             <p id='footerTxt'>© 2018 Grandma's House  |  Royce Le, Cindy Nguyen, Aindra Thin, Maxwell Zhou</p>
           </div>
         </footer>

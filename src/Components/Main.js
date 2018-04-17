@@ -33,7 +33,7 @@ const Main = () => (
       <Route path='/favorites' component={Favorites}/>
       <Route path='/messages' component={Messages}/>
       <Route path='/reservations' component={Reservations}/>
-      <Route path='/learnmore' component={LearnMore} img={pic}/>
+      <Route path='/learnmore' render={() => <LearnMore img={pic} />}/>
 
     </Switch>
   </main>
