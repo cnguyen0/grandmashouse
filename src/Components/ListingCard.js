@@ -33,10 +33,10 @@ const styles = theme => ({
 });
 
 class ListingCard extends React.Component {
-  state = { expanded: false };
+  state = { liked: false };
 
-  handleExpandClick = () => {
-    this.setState({ expanded: !this.state.expanded });
+  handleLiked = () => {
+    this.setState({ liked: !this.state.liked });
   };
 
   render() {
@@ -48,7 +48,7 @@ class ListingCard extends React.Component {
           <CardHeader
             action={
               <IconButton aria-label="Add to favorites">
-                <FavoriteIcon />
+                <FavoriteIcon style={{color: this.state.liked ? 'red' : ''}} onClick={this.handleLiked}/>
               </IconButton>
             }
             title={this.props.usersFave.title}
