@@ -92,3 +92,8 @@ footer {
 }
 
 /* End of Footer CSS */
+
+.learnmore {
+  width: 75%; 
+  margin: 0 auto;
+}

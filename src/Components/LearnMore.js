@@ -5,6 +5,8 @@ import Paper from 'material-ui/Paper';
 import Typography from 'material-ui/Typography';
 import Button from 'material-ui/Button';
 
+import './App.css';
+
 const styles = theme => ({
     root: theme.mixins.gutters({
       paddingTop: 30,
@@ -19,9 +21,9 @@ class LearnMore extends React.Component {
     render() {
         const { classes } = this.props;
         return (
-            <div>
-              <img src={this.props.image} />
-              <Button variant="raised" color="secondary" style={{fontSize: '50px'}} className={classes.button}>
+            <div className='learnmore'>
+              <img src={this.props.image} style={{display: "block", marginLeft: "auto", marginRight: "auto", width: "50%"}} />
+              <Button variant="raised" color="secondary" style={{fontSize: '50px', display: "block", marginLeft: "auto", marginRight: "auto", width: "50%"}} className={classes.button}>
                 Sign Up!
               </Button>
             </div>
