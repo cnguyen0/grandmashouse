@@ -1,11 +1,12 @@
 import React from 'react'
-import { Switch, Route } from 'react-router-dom'
-import ContentPage from './ContentPage'
+import { Switch, Route } from 'react-router-dom';
+import ContentPage from './ContentPage';
 import LandingPage from './LandingPage';
 import SignIn from './SignIn';
 import Favorites from './Favorites';
-import Reservations from './Reservations'
-import Messages from './Messages'
+import Reservations from './Reservations';
+import Messages from './Messages';
+import LearnMore from './LearnMore';
 
 
 const Terms = (props) => {
@@ -31,7 +32,6 @@ const Main = () => (
       <Route path='/favorites' component={Favorites}/>
       <Route path='/messages' component={Messages}/>
       <Route path='/reservations' component={Reservations}/>
-
     </Switch>
   </main>
 )
