@@ -9,8 +9,8 @@ class LandingPage extends React.Component {
                         <div id="LandText">
                             <h1> Grandma's House </h1>
                             <p id="LandBackgroundText"> Connecting people through the love of food </p>
-                            <a className="LandButton"> Chef </a>
-                            <a className="LandButton"> Eater </a>
+                            <button className="LandButton"> Chef </button>
+                            <button className="LandButton"> Eater </button>
 
                         </div>
                     </div>
