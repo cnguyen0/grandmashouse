@@ -6,6 +6,8 @@ import SignIn from './SignIn';
 import Favorites from './Favorites';
 import Reservations from './Reservations'
 import Messages from './Messages'
+import LearnMore from './LearnMore'
+import pic from '../img/How-it-works-Chef.jpg'
 
 
 const Terms = (props) => {
@@ -31,6 +33,7 @@ const Main = () => (
       <Route path='/favorites' component={Favorites}/>
       <Route path='/messages' component={Messages}/>
       <Route path='/reservations' component={Reservations}/>
+      <Route path='/learnmore' component={LearnMore} img={pic}/>
 
     </Switch>
   </main>
