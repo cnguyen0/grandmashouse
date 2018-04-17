@@ -3,6 +3,7 @@ import { Switch, Route } from 'react-router-dom'
 import ContentPage from './ContentPage'
 import LandingPage from './LandingPage';
 import SignIn from './SignIn';
+import Favorites from './Favorites';
 
 
 const Terms = (props) => {
@@ -25,6 +26,7 @@ const Main = () => (
       <Route exact path='/' component={LandingPage}/>
       <Route path='/terms' component={Terms}/>
       <Route path='/signin' component={SignIn}/>
+      <Route path='/favorites' component={Favorites}/>
     </Switch>
   </main>
 )

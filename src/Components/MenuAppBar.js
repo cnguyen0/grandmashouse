@@ -8,13 +8,11 @@ import Typography from 'material-ui/Typography';
 import IconButton from 'material-ui/IconButton';
 import MenuIcon from 'material-ui-icons/Menu';
 import AccountCircle from 'material-ui-icons/AccountCircle';
-import Switch from 'material-ui/Switch';
-import { FormControlLabel, FormGroup } from 'material-ui/Form';
 import Menu, { MenuItem } from 'material-ui/Menu';
 import Button from 'material-ui/Button';
 
-
 const SignIn = props => <Link to="/signin" {...props} />
+const Favorites = props => <Link to="/favorites" {...props} />
 
 const styles = {
   root: {
@@ -54,14 +52,6 @@ class MenuAppBar extends React.Component {
 
     return (
       <div className={classes.root}>
-        {/* <FormGroup>
-          <FormControlLabel
-            control={
-              <Switch checked={auth} onChange={this.handleChange} aria-label="LoginSwitch" />
-            }
-            label={auth ? 'Logout' : 'Login'}
-          />
-        </FormGroup> */}
         <AppBar position="static">
           <Toolbar>
             <IconButton className={classes.menuButton} color="inherit" aria-label="Menu">
@@ -70,7 +60,7 @@ class MenuAppBar extends React.Component {
             <Typography variant="title" color="inherit" className={classes.flex}>
               <a id='HomeBtn' href='/'>Grandma&#39;s House</a>
             </Typography>
-              <Button variant="raised" color="primary" className={classes.button}>
+              <Button variant="raised" color="primary" className={classes.button} component={Favorites}>
                 Favorites
               </Button>
               <Button variant="raised" color="primary" className={classes.button}>
