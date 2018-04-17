@@ -12,6 +12,8 @@ import Menu, { MenuItem } from 'material-ui/Menu';
 import Button from 'material-ui/Button';
 
 const SignIn = props => <Link to="/signin" {...props} />
+const Reservations = props => <Link to="/reservations" {...props} />
+const Messages = props => <Link to="/messages" {...props} />
 const Favorites = props => <Link to="/favorites" {...props} />
 
 const styles = {
@@ -63,10 +65,10 @@ class MenuAppBar extends React.Component {
               <Button variant="raised" color="primary" className={classes.button} component={Favorites}>
                 Favorites
               </Button>
-              <Button variant="raised" color="primary" className={classes.button}>
+              <Button variant="raised" color="primary" className={classes.button} component={Reservations}>
                 Reservations
               </Button>
-              <Button variant="raised" color="primary" className={classes.button}>
+              <Button variant="raised" color="primary" className={classes.button} component={Messages}>
                 Messages
               </Button>
               <Button variant="raised" color="secondary" className={classes.button}>
