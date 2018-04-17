@@ -16,6 +16,7 @@ const SignIn = props => <Link to="/signin" {...props} />
 const Reservations = props => <Link to="/reservations" {...props} />
 const Messages = props => <Link to="/messages" {...props} />
 const Favorites = props => <Link to="/favorites" {...props} />
+const SignUp = props => <Link to="/signup" {...props} />
 
 const styles = {
   root: {
@@ -70,7 +71,7 @@ class MenuAppBar extends React.Component {
             <Button variant="raised" color="primary" className={classes.button} component={Messages}>
               Messages
             </Button>
-            <Button variant="raised" color="secondary" className={classes.button}>
+            <Button variant="raised" color="secondary" className={classes.button} component={SignUp}>
               Become a Chef
             </Button>
             { !this.state.auth && <Button variant="raised" color="secondary" className={classes.button} component={SignIn}>

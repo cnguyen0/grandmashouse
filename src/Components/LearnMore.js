@@ -4,8 +4,10 @@ import { withStyles } from 'material-ui/styles';
 import Paper from 'material-ui/Paper';
 import Typography from 'material-ui/Typography';
 import Button from 'material-ui/Button';
-
 import './App.css';
+import { Link } from 'react-router-dom';
+
+const SignUp = props => <Link to="/signup" {...props} />
 
 const styles = theme => ({
     root: theme.mixins.gutters({
@@ -25,7 +27,7 @@ class LearnMore extends React.Component {
                 <Paper elevation={3}>
                     <div>
                         <img src={this.props.image} style={{display: "block", marginLeft: "auto", marginRight: "auto", width: "60%"}} />
-                        <Button variant="raised" color="secondary" style={{fontSize: '50px', display: "block", marginLeft: "auto", marginRight: "auto", width: "50%"}} className={classes.button}>
+                        <Button variant="raised" color="secondary" style={{fontSize: '50px', display: "block", marginLeft: "auto", marginRight: "auto", width: "50%"}} className={classes.button} component={SignUp}>
                             Sign Up!
                         </Button>
                     </div>
