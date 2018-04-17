@@ -4,6 +4,8 @@ import ContentPage from './ContentPage'
 import LandingPage from './LandingPage';
 import SignIn from './SignIn';
 import Favorites from './Favorites';
+import Reservations from './Reservations'
+import Messages from './Messages'
 
 
 const Terms = (props) => {
@@ -27,6 +29,9 @@ const Main = () => (
       <Route path='/terms' component={Terms}/>
       <Route path='/signin' component={SignIn}/>
       <Route path='/favorites' component={Favorites}/>
+      <Route path='/messages' component={Messages}/>
+      <Route path='/reservations' component={Reservations}/>
+
     </Switch>
   </main>
 )
