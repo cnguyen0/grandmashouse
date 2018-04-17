@@ -22,10 +22,14 @@ class LearnMore extends React.Component {
         const { classes } = this.props;
         return (
             <div className='learnmore'>
-              <img src={this.props.image} style={{display: "block", marginLeft: "auto", marginRight: "auto", width: "50%"}} />
-              <Button variant="raised" color="secondary" style={{fontSize: '50px', display: "block", marginLeft: "auto", marginRight: "auto", width: "50%"}} className={classes.button}>
-                Sign Up!
-              </Button>
+                <Paper elevation={3}>
+                    <div>
+                        <img src={this.props.image} style={{display: "block", marginLeft: "auto", marginRight: "auto", width: "60%"}} />
+                        <Button variant="raised" color="secondary" style={{fontSize: '50px', display: "block", marginLeft: "auto", marginRight: "auto", width: "50%"}} className={classes.button}>
+                            Sign Up!
+                        </Button>
+                    </div>
+                </Paper>
             </div>
         );
     }
