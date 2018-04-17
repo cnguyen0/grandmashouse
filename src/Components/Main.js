@@ -7,7 +7,8 @@ import Favorites from './Favorites';
 import Reservations from './Reservations'
 import Messages from './Messages'
 import LearnMore from './LearnMore'
-import pic from '../img/How-it-works-Chef.jpg'
+import howchef from '../img/How-it-works-Chef.jpg'
+import howeater from '../img/How-it-works-Eater.jpg'
 
 
 const Terms = (props) => {
@@ -33,7 +34,8 @@ const Main = () => (
       <Route path='/favorites' component={Favorites}/>
       <Route path='/messages' component={Messages}/>
       <Route path='/reservations' component={Reservations}/>
-      <Route path='/learnmore' render={() => <LearnMore img={pic} />}/>
+      <Route path='/learnmore-homechef' render={() => <LearnMore image={howchef} />}/>
+      <Route path='/learnmore-eater' render={() => <LearnMore image={howeater} />}/>
 
     </Switch>
   </main>
