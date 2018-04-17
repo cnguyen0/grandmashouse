@@ -54,18 +54,12 @@ class ListingCard extends React.Component {
       <div>
         <Card className={classes.card}>
           <CardHeader
-            avatar={
-              <Avatar aria-label="Recipe" className={classes.avatar}>
-                R
-              </Avatar>
-            }
             action={
               <IconButton>
                 <MoreVertIcon />
               </IconButton>
             }
             title={this.props.usersFave.title}
-            subheader="September 14, 2016"
           />
           <CardMedia
             className={classes.media}

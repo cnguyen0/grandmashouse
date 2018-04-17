@@ -72,3 +72,23 @@ section {
   box-sizing: inherit;
 }
 /* end of Aindra's testing things */
+
+#HomeBtn {
+  color: inherit; /* blue colors for links too */
+  text-decoration: inherit; /* no underline */
+}
+
+/* Footer CSS */
+@import url('https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900');
+
+footer {
+  background-color: #33383c;
+  padding:30px 0px;
+}
+
+#footerTxt {
+  color: #ffffff;
+  text-align: center;
+}
+
+/* End of Footer CSS */

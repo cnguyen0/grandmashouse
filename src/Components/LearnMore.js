@@ -17,6 +17,7 @@ const styles = theme => ({
 class LearnMore extends React.Component {
 
     render() {
+        console.log("hello");
         const { classes } = this.props;
         return (
             <div>

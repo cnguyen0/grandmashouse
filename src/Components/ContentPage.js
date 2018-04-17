@@ -27,7 +27,7 @@ class ContentPage extends React.Component {
         return (
             <div>
                 <Paper className={classes.root}  elevation={4}>
-                    <Typography variant="headline" component="h3">
+                    <Typography variant="headline" component="h1">
                         {this.props.title}
                     </Typography>
                     <Typography component="p">
