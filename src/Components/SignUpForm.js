@@ -56,6 +56,7 @@ class SignUpForm extends React.Component {
 
   render() {
     const { classes } = this.props;
+    console.log("Sign Up Form rendered")
 
     return (
       <form className={classes.container} noValidate autoComplete="off">

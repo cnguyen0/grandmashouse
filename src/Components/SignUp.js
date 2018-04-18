@@ -25,9 +25,10 @@ function getSteps() {
 }
 
 function getStepContent(stepIndex) {
+    const form = {SignUpForm};
   switch (stepIndex) {
     case 0:
-      return 'Select campaign settings...';
+      return <SignUpForm />; //Sample signup form implemented here. Can put different componenets in these steps
     case 1:
       return 'What is an ad group anyways?';
     case 2:
