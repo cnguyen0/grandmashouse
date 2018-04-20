@@ -33,7 +33,7 @@ section {
 }
 
 #LandBackground {
-  background: url(http://www.petdoctorsupplyco.com/wp-content/uploads/2017/04/corgi-puppy.jpg);
+  background: url(https://wearelocalworks.org/wp-content/uploads/2016/11/Sharing-food-stories.jpg);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -52,6 +52,10 @@ section {
 
 #LandText {
   text-align: center;
+  background: rgba(34,34,34,0.75);
+  border-radius: 10px;
+  width: 100%;
+  padding-bottom: 20px;
 }
 
 .LandButton {
@@ -70,6 +74,20 @@ section {
   padding: 0 2rem;
   text-transform: uppercase;
   box-sizing: inherit;
+}
+
+#LandBackgroundText {
+  color: white;
+  font-size: 20px;
+  margin: 0;
+  padding: 0;
+  margin-bottom: 20px;
+}
+h1 {
+  font-size: 100px;
+  color: white;
+  padding: 5px;
+  margin: 5px;
 }
 /* end of Aindra's testing things */
 
