@@ -1,12 +1,13 @@
 import React from 'react'
-import { Switch, Route } from 'react-router-dom'
-import ContentPage from './ContentPage'
+import { Switch, Route } from 'react-router-dom';
+import ContentPage from './ContentPage';
 import LandingPage from './LandingPage';
 import SignIn from './SignIn';
 import Favorites from './Favorites';
 import Reservations from './Reservations'
 import Messages from './Messages'
 import LearnMore from './LearnMore'
+import SignUp from './SignUp'
 import howchef from '../img/How-it-works-Chef.jpg'
 import howeater from '../img/How-it-works-Eater.jpg'
 
@@ -34,9 +35,11 @@ const Main = () => (
       <Route path='/favorites' component={Favorites}/>
       <Route path='/messages' component={Messages}/>
       <Route path='/reservations' component={Reservations}/>
+      <Route path='/signin' component={SignIn}/>
+      <Route path='/signup' component={SignUp}/>
       <Route path='/learnmore-homechef' render={() => <LearnMore image={howchef} />}/>
       <Route path='/learnmore-eater' render={() => <LearnMore image={howeater} />}/>
-
+      
     </Switch>
   </main>
 )
