@@ -10,6 +10,8 @@ import LearnMore from './LearnMore'
 import SignUp from './SignUp'
 import howchef from '../img/How-it-works-Chef.jpg'
 import howeater from '../img/How-it-works-Eater.jpg'
+import MyAccount from './MyAccount';
+import Profile from './Profile';
 
 
 const Terms = (props) => {
@@ -39,7 +41,9 @@ const Main = () => (
       <Route path='/signup' component={SignUp}/>
       <Route path='/learnmore-homechef' render={() => <LearnMore image={howchef} />}/>
       <Route path='/learnmore-eater' render={() => <LearnMore image={howeater} />}/>
-      
+      <Route path='/myaccount' component={MyAccount}/>
+      <Route path='/profile' component={Profile}/>
+
     </Switch>
   </main>
 )

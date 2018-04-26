@@ -17,6 +17,8 @@ const Reservations = props => <Link to="/reservations" {...props} />
 const Messages = props => <Link to="/messages" {...props} />
 const Favorites = props => <Link to="/favorites" {...props} />
 const SignUp = props => <Link to="/signup" {...props} />
+const Profile = props => <Link to="/profile" {...props} />
+const MyAccount = props => <Link to="/myaccount" {...props} />
 
 const styles = {
   root: {
@@ -102,8 +104,8 @@ class MenuAppBar extends React.Component {
                   open={open}
                   onClose={this.handleClose}
                 >
-                  <MenuItem onClick={this.handleClose}>Profile</MenuItem>
-                  <MenuItem onClick={this.handleClose}>My account</MenuItem>
+                  <MenuItem component={Profile}>Profile</MenuItem>
+                  <MenuItem component={MyAccount}>My account</MenuItem>
                   <MenuItem onClick={this.handleChange}>Log off</MenuItem>
                 </Menu>
               </div>
