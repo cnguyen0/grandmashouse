@@ -21,7 +21,7 @@ const styles = theme => ({
 });
 
 function getSteps() {
-  return ['Select master blaster campaign settings', 'Create an ad group', 'Create an ad'];
+  return ['Review Terms & Conditions', 'Personal Information', 'Confirm Food Handlers'];
 }
 
 function getStepContent(stepIndex) {
