@@ -3,6 +3,8 @@ import PropTypes from 'prop-types';
 import { withStyles } from 'material-ui/styles';
 import MenuItem from 'material-ui/Menu/MenuItem';
 import TextField from 'material-ui/TextField';
+import Typography from 'material-ui/Typography';
+
 
 //Royce: Sample SignUpForm with material-ui-next
 
@@ -69,8 +71,16 @@ class SignUpForm extends React.Component {
     console.log("Sign Up Form rendered")
 
     return (
-      <form className={classes.container} noValidate autoComplete="off">
-        
+      <form noValidate autoComplete="off">
+        <div class="row" margin="normal">
+            <div class="col-xs-12">
+                <div class="box">
+                    <Typography variant="headline" component="h1">
+                        Account Information
+                    </Typography>
+                </div>
+            </div>
+        </div>
         <TextField required id="Username" label="Username" defaultValue=""
           className={classes.textField} margin="normal" />
 
@@ -88,82 +98,30 @@ class SignUpForm extends React.Component {
 
         <TextField required id="PasswordComf" label="Confirm Password" className={classes.textField}
           type="password" autoComplete="current-password" margin="normal" />
+        
+        <div class="row" margin="normal">
+            <div class="col-xs-12">
+                <div class="box">
+                    <Typography variant="headline" component="h1">
+                        Address Information
+                    </Typography>
+                </div>
+            </div>
+        </div>
 
-        <TextField required id="multiline-flexible" label="Multiline" multiline rowsMax="4"
-          value={this.state.multiline}
-          onChange={this.handleChange('multiline')}
-          className={classes.textField}
-          margin="normal"
-        />
-        <TextField
-          id="multiline-static"
-          label="Multiline"
-          multiline
-          rows="4"
-          defaultValue="Default Value"
-          className={classes.textField}
-          margin="normal"
-        />
-        <TextField
-          id="helperText"
-          label="Helper text"
-          defaultValue="Default Value"
-          className={classes.textField}
-          helperText="Some important text"
-          margin="normal"
-        />
-        <TextField
-          id="with-placeholder"
-          label="With placeholder"
-          placeholder="Placeholder"
-          className={classes.textField}
-          margin="normal"
-        />
-        <TextField
-          id="textarea"
-          label="With placeholder multiline"
-          placeholder="Placeholder"
-          multiline
-          className={classes.textField}
-          margin="normal"
-        />
+        <TextField required id="Address" label="Address" defaultValue=""
+          className={classes.textField} margin="normal" />
 
-        <TextField
-          id="number"
-          label="Number"
-          value={this.state.age}
-          onChange={this.handleChange('age')}
-          type="number"
-          className={classes.textField}
-          InputLabelProps={{
-            shrink: true,
-          }}
-          margin="normal"
-        />
+        <TextField required id="City" label="City" defaultValue=""
+          className={classes.textField} margin="normal" />
 
-        <TextField
-          id="search"
-          label="Search field"
-          type="search"
-          className={classes.textField}
-          margin="normal"
-        />
+        <TextField required id="Zip" label="Zip" defaultValue=""
+          className={classes.textField} margin="normal" />
 
-        <TextField
-          id="select-state"
-          select
-          label="State"
-          className={classes.textField}
-          value={this.state.currency}
-          onChange={this.handleChange('currency')}
-          SelectProps={{
-            MenuProps: {
-              className: classes.menu,
-            },
-          }}
-          helperText="Please select your State"
-          margin="normal"
-        >
+        <TextField id="select-state" select label="State" className={classes.textField}
+          value={this.state.currency} onChange={this.handleChange('currency')}
+          SelectProps={{ MenuProps: { className: classes.menu, }, }}
+          helperText="Please select your State" margin="normal" >
           {states.map(option => (
             <MenuItem key={option.value} value={option.value}>
               {option.label}
@@ -171,10 +129,10 @@ class SignUpForm extends React.Component {
           ))}
         </TextField>
 
-
+        {/* gfdgfs 
         <TextField id="full-width" label="Label" InputLabelProps={{ shrink: true, }}
-          placeholder="Placeholder" helperText="Full width!" fullWidth margin="normal" />
-          
+          placeholder="Placeholder" helperText="Full width!" fullWidth margin="normal" /> 
+        */}
       </form>
     );
   }
