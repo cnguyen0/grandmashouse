@@ -6,7 +6,6 @@ import IconButton from 'material-ui/IconButton';
 import Typography from 'material-ui/Typography';
 import red from 'material-ui/colors/red';
 import FavoriteIcon from 'material-ui-icons/Favorite';
-import Button from 'material-ui/Button';
 import ListingDialog from './ListingDialog'
 
 const styles = theme => ({
