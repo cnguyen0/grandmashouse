@@ -6,6 +6,7 @@ import Typography from 'material-ui/Typography';
 import FontAwesomeIcon from '@fortawesome/react-fontawesome'
 import { faStar } from '@fortawesome/fontawesome-free-solid'
 import ListingCard from './ListingCard';
+import UserAvatarProfile from './UserAvatarProfile';
 
 import './App.css';
 
@@ -24,6 +25,18 @@ class Profile extends React.Component {
     item = {
         title: 'Beyonce',
         image: "https://img.sndimg.com/food/image/upload/w_896,h_504,c_fill,fl_progressive,q_80/v1/img/recipes/14/81/72/vNuD41wlTe4jnwh8XngJ_Food-com-2017-05-311586.jpg"
+    }
+
+    common = {
+        img: "http://2.bp.blogspot.com/-Nluqr5JsqIc/Vk1p5T38BzI/AAAAAAAAE7g/NwVhT3ZMPLA/s1600/CuteAvatar2.png",
+        first_name: 'Ruff',
+        last_name: 'Dawg'
+    }
+
+    common2 = {
+        img: 'http://i.imgur.com/IkLetkK.png',
+        first_name: 'Hello',
+        last_name: 'Kitty'
     }
 
     render() {
@@ -59,8 +72,8 @@ class Profile extends React.Component {
                     {/* common connection with avatars */}
                     <Paper className={classes.root}  elevation={4}>
                         <Typography variant="headline">Common Connections</Typography>
-                        <img src='http://2.bp.blogspot.com/-Nluqr5JsqIc/Vk1p5T38BzI/AAAAAAAAE7g/NwVhT3ZMPLA/s1600/CuteAvatar2.png' style={{borderRadius: '50%', width: '250px'}} alt='common connection avatar'/>
-                        <img src='http://i.imgur.com/IkLetkK.png' style={{borderRadius: '50%', width: '150px'}} alt='common connection avatar'/>
+                        <UserAvatarProfile user={this.common} />
+                        <UserAvatarProfile user={this.common2} />
                     </Paper>
                 </div>
             </div>
