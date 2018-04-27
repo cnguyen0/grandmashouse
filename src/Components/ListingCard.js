@@ -6,6 +6,8 @@ import IconButton from 'material-ui/IconButton';
 import Typography from 'material-ui/Typography';
 import red from 'material-ui/colors/red';
 import FavoriteIcon from 'material-ui-icons/Favorite';
+import Button from 'material-ui/Button';
+import ListingDialog from './ListingDialog'
 
 const styles = theme => ({
   card: {
@@ -55,15 +57,22 @@ class ListingCard extends React.Component {
           />
           <CardMedia
             className={classes.media}
-            image="https://img.sndimg.com/food/image/upload/w_896,h_504,c_fill,fl_progressive,q_80/v1/img/recipes/14/81/72/vNuD41wlTe4jnwh8XngJ_Food-com-2017-05-311586.jpg"
+            image={this.props.usersFave.image}
             title="Contemplative Reptile"
           />
           <CardContent>
             <Typography component="p">
               Not quite sure what to put in this space. I wanted it to be empty but it makes the cards smaller
-              and I don't like that at all. So I was thinking we can perhaps add more information or description
+              and I dont like that at all. So I was thinking we can perhaps add more information or description
               from the favorites you know?
             </Typography>
+            <ListingDialog
+              title={this.props.usersFave.title}
+              details="Not quite sure what to put in this space. I wanted it to be empty but it makes the cards smaller
+              and I dont like that at all. So I was thinking we can perhaps add more information or description
+              from the favorites you know?"
+              image={this.props.usersFave.image}
+            />
           </CardContent>
         </Card>
       </div>
