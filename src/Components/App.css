@@ -115,3 +115,15 @@ footer {
   width: 75%; 
   margin: 0 auto;
 }
+
+.profile-flex {
+  display: flex;
+}
+
+.left-sidebar {
+  flex: 35%;
+}
+
+.right-sidebar {
+  flex: 65%;
+}
