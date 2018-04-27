@@ -33,7 +33,7 @@ class Profile extends React.Component {
                 <div className="left-sidebar">
                     {/* side bar, user profile information. contains avatar, name, average rating, bio */}
                     <Paper className={classes.root}  elevation={4}>
-                        <img src='http://www.lovemarks.com/wp-content/uploads/profile-avatars/default-avatar-ponsy-deer.png' style={{borderRadius: '50%', width: '250px'}}/>
+                        <img src='http://www.lovemarks.com/wp-content/uploads/profile-avatars/default-avatar-ponsy-deer.png' style={{borderRadius: '50%', width: '250px'}} alt='user avatar' />
                         <Typography variant="headline">Grandma Betty</Typography>
                         <hr />
                         <Typography variant="title">Bio</Typography>
@@ -59,7 +59,8 @@ class Profile extends React.Component {
                     {/* common connection with avatars */}
                     <Paper className={classes.root}  elevation={4}>
                         <Typography variant="headline">Common Connections</Typography>
-                        <ListingCard item={this.item} />
+                        <img src='http://2.bp.blogspot.com/-Nluqr5JsqIc/Vk1p5T38BzI/AAAAAAAAE7g/NwVhT3ZMPLA/s1600/CuteAvatar2.png' style={{borderRadius: '50%', width: '250px'}} alt='common connection avatar'/>
+                        <img src='http://i.imgur.com/IkLetkK.png' style={{borderRadius: '50%', width: '150px'}} alt='common connection avatar'/>
                     </Paper>
                 </div>
             </div>
