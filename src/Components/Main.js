@@ -12,6 +12,7 @@ import howchef from '../img/How-it-works-Chef.jpg'
 import howeater from '../img/How-it-works-Eater.jpg'
 import MyAccount from './MyAccount';
 import Profile from './Profile';
+import FAQ from './FAQ'
 
 
 const Terms = (props) => {
@@ -43,6 +44,7 @@ const Main = () => (
       <Route path='/learnmore-eater' render={() => <LearnMore image={howeater} />}/>
       <Route path='/myaccount' component={MyAccount}/>
       <Route path='/profile' component={Profile}/>
+      <Route path='/FAQ' component={FAQ}/>
 
     </Switch>
   </main>
