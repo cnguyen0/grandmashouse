@@ -14,10 +14,10 @@ const styles = theme => ({
         paddingBottom: 16,
         margin: 50,
         marginTop: theme.spacing.unit * 3,
-      }),
+    }),
     button: {
         margin: theme.spacing.unit,
-      },
+    }
 });
 
 function handleChange() {
