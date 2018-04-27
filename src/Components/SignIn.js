@@ -3,40 +3,22 @@ import PropTypes from 'prop-types';
 import { withStyles } from 'material-ui/styles';
 import MenuItem from 'material-ui/Menu/MenuItem';
 import TextField from 'material-ui/TextField';
+import Typography from 'material-ui/Typography';
+import Button from 'material-ui/Button';
 
 const styles = theme => ({
-    container: {
-      display: 'flex',
-      flexWrap: 'wrap',
-    },
-    textField: {
-      marginLeft: theme.spacing.unit,
-      marginRight: theme.spacing.unit,
-      width: 200,
-    },
-    menu: {
-      width: 200,
-    },
-  });
+  root: {
+    width: '90%',
+  },
+  backButton: {
+    marginRight: theme.spacing.unit,
+  },
+  instructions: {
+    marginTop: theme.spacing.unit,
+    marginBottom: theme.spacing.unit,
+  },
+});
   
-  const currencies = [
-    {
-      value: 'USD',
-      label: '$',
-    },
-    {
-      value: 'EUR',
-      label: '€',
-    },
-    {
-      value: 'BTC',
-      label: '฿',
-    },
-    {
-      value: 'JPY',
-      label: '¥',
-    },
-  ];
 
 
 // ROYCE TODO THIS FILE!
@@ -88,54 +70,55 @@ class SignIn extends React.Component {
     //     this.props.onSignIn(username, password)
     //   }
 
+  render() {
+    const { classes } = this.props;
+    console.log("Sign Up Form rendered")
+
+    return (
+      <form noValidate autoComplete="off" align='center'>
+        <div class="row" margin="normal">
+            <div class="col-xs-12">
+                <div class="box">
+                  <br/>
+                  <br/>
+                    <Typography align="center" variant="headline" component="h1">
+                        Member Login
+                    </Typography>
+                </div>
+            </div>
+        </div>
+
+        <div class="row" margin="normal">
+            <div align="center" class="col-xs-12">
+              <TextField required id="Username" label="Username" defaultValue=""
+                className={classes.textField} margin="normal" />
+            </div>
+        </div>
+
+        <div class="row" margin="normal">
+            <div align="center" class="col-xs-12">
+              <TextField required id="Password" label="Password" defaultValue=""
+                type="password" className={classes.textField} margin="normal" />
+          </div>
+        </div>
 
 
+        <div class="row" margin="normal">
+            <div class="col-xs-12">
+                <div class="box">
+                  <br/>
+                  <br/>
+                  <Button variant="raised" color="primary" className={classes.button}>
+                    Submit
+                  </Button>
+                </div>
+            </div>
+        </div>
 
-
-    render() {
-        const { classes } = this.props;
-        
-        return (
-            <div className='Modal'>
-              <form onSubmit= { this.props.onSubmit }>
-                <Input type='text' name='username' placeholder='username' />
-                <Input type='password' name='password' placeholder='password' />
-                <button> Sign In</button>
-              </form>
-              <div className='social-signin'>
-                <button className="fb" onClick={ this.props.onClick }><i className="fa fa-facebook" aria-hidden="true"></i></button>
-                <button className="tw" onClick={ this.props.onClick }><i className="fa fa-twitter" aria-hidden="true"></i></button>
-              </div>
-                <a href='#'>Lost your password ?</a>
-                <form className={classes.container} noValidate autoComplete="off">
-                    <TextField id="Username" label="Username" 
-                    className={classes.textField} value={this.state.name}
-                    onChange={this.handleChange('Username')} margin="normal"
-                    />
-                    <TextField id="LastName" label="Last Name" 
-                    className={classes.textField} value={this.state.name}
-                    onChange={this.handleChange('LastName')} margin="normal"
-                    />
-                    <TextField id="Email" label="Email" 
-                    className={classes.textField} value={this.state.name}
-                    onChange={this.handleChange('Email')} margin="normal"
-                    />
-                </form>
-           </div>
-        )
-    }
-}
-
-// Generic input field
-    class Input extends React.Component {
-    render() {
-      return <div className='Input'>
-                <input type={ this.props.type } name={ this.props.name } placeholder={ this.props.placeholder } required autocomplete='false'/>
-                <label for={ this.props.name } ></label>
-             </div>
-    }
-  
+      </form>
+    );
   }
+}
 
   SignIn.propTypes = {
     classes: PropTypes.object.isRequired,
