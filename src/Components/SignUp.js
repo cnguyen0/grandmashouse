@@ -4,8 +4,8 @@ import { withStyles } from 'material-ui/styles';
 import Stepper, { Step, StepLabel } from 'material-ui/Stepper';
 import Button from 'material-ui/Button';
 import Typography from 'material-ui/Typography';
-import SignUpForm from './SignUpForm.js' //TODO: can add this to one of the steps
-
+import SignUpForm from './SignUpForm.js'; //TODO: can add this to one of the steps
+import LearnMore from './LearnMore.js';
 //Royce: Sample Stepper with material-ui-next
 const styles = theme => ({
   root: {
@@ -21,16 +21,16 @@ const styles = theme => ({
 });
 
 function getSteps() {
-  return ['Select master blaster campaign settings', 'Create an ad group', 'Create an ad'];
+  return ['Review Terms & Conditions', 'Personal Information', 'Confirm Food Handlers'];
 }
 
 function getStepContent(stepIndex) {
     const form = {SignUpForm};
   switch (stepIndex) {
     case 0:
-      return <SignUpForm />; //Sample signup form implemented here. Can put different componenets in these steps
+      return 'Logistics page with terms & conditions';
     case 1:
-      return 'What is an ad group anyways?';
+      return <SignUpForm />;
     case 2:
       return 'This is the bit I really care about!';
     default:

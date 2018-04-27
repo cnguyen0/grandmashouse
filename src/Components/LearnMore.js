@@ -2,7 +2,6 @@ import React from 'react';
 
 import { withStyles } from 'material-ui/styles';
 import Paper from 'material-ui/Paper';
-import Typography from 'material-ui/Typography';
 import Button from 'material-ui/Button';
 import './App.css';
 import { Link } from 'react-router-dom';

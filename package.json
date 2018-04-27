@@ -3,9 +3,12 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+<<<<<<< HEAD
     "@fortawesome/fontawesome": "^1.1.5",
     "@fortawesome/fontawesome-free-solid": "^5.0.10",
     "@fortawesome/react-fontawesome": "0.0.18",
+=======
+>>>>>>> 0c9f7b68b1dc6753d453d8acceb4af71cd9228d3
     "@material-ui/icons": "^1.0.0-beta.43",
     "autosuggest-highlight": "^3.1.1",
     "bootstrap": "^4.0.0",

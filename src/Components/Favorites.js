@@ -30,7 +30,8 @@ const styles = theme => ({
 
 class Favorites extends React.Component {
     usersFave = {
-        title: 'Beyonce'
+        title: 'Beyonce',
+        image: "https://img.sndimg.com/food/image/upload/w_896,h_504,c_fill,fl_progressive,q_80/v1/img/recipes/14/81/72/vNuD41wlTe4jnwh8XngJ_Food-com-2017-05-311586.jpg"
     }
 
     render() {
