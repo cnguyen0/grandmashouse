@@ -5,7 +5,6 @@ import Stepper, { Step, StepLabel } from 'material-ui/Stepper';
 import Button from 'material-ui/Button';
 import Typography from 'material-ui/Typography';
 import SignUpForm from './SignUpForm.js'; //TODO: can add this to one of the steps
-import LearnMore from './LearnMore.js';
 //Royce: Sample Stepper with material-ui-next
 const styles = theme => ({
   root: {
@@ -50,7 +49,6 @@ class SignUp extends React.Component {
   };
 
   getStepContent(stepIndex) {
-    const form = {SignUpForm};
     const { classes } = this.props;
     
     switch (stepIndex) {

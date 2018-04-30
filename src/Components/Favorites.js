@@ -39,28 +39,28 @@ class Favorites extends React.Component {
         return (
             <div>
                 <Paper className={classes.root} elevation={4}>
-                    <div class="row">
-                        <div class="col-xs-12">
-                            <div class="box">
+                    <div className="row">
+                        <div className="col-xs-12">
+                            <div className="box">
                                 <Typography variant="headline" component="h1">
                                     Favorites
                                 </Typography>
                             </div>
                         </div>
                     </div>
-                    <div class="row around-s">
-                        <div class="col-xs-4">
-                            <div class="box">
+                    <div className="row around-s">
+                        <div className="col-xs-4">
+                            <div className="box">
                                 <ListingCard item={this.usersFave} />
                             </div>
                         </div>
-                        <div class="col-xs-4">
-                            <div class="box">
+                        <div className="col-xs-4">
+                            <div className="box">
                                 <ListingCard item={this.usersFave} />
                             </div>
                         </div>
-                        <div class="col-xs-4">
-                            <div class="box">
+                        <div className="col-xs-4">
+                            <div className="box">
                                 <ListingCard item={this.usersFave} />
                             </div>
                         </div>
