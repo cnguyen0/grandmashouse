@@ -41,7 +41,7 @@ class FullScreenDialog extends React.Component {
     return (
       <div>
         <Button onClick={this.handleClickOpen} variant="raised" color="secondary" className={classes.button}>
-          Reserve!
+          Reserve
         </Button>
         <Dialog
           fullScreen

@@ -72,8 +72,17 @@ class Profile extends React.Component {
                     {/* common connection with avatars */}
                     <Paper className={classes.root}  elevation={4}>
                         <Typography variant="headline">Common Connections</Typography>
-                        <UserAvatarProfile user={this.common} />
-                        <UserAvatarProfile user={this.common2} />
+                        <div className='common-connection-friends'>
+                            <div className='common-connection-third'>
+                                <UserAvatarProfile user={this.common} />
+                            </div>
+                            <div className='common-connection-third'>
+                                <UserAvatarProfile user={this.common2} />
+                            </div>
+                            <div className='common-connection-third'>
+                                <UserAvatarProfile user={this.common} />
+                            </div>
+                        </div>
                     </Paper>
                 </div>
             </div>

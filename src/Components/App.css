@@ -127,3 +127,11 @@ footer {
 .right-sidebar {
   flex: 65%;
 }
+
+.common-connection-friends {
+  display: flex;
+}
+
+.common-connection-third {
+  flex: 32%;
+}
