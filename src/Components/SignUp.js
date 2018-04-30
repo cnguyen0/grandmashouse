@@ -24,20 +24,6 @@ function getSteps() {
   return ['Review Terms & Conditions', 'Personal Information', 'Confirm Food Handlers'];
 }
 
-function getStepContent(stepIndex) {
-    const form = {SignUpForm};
-  switch (stepIndex) {
-    case 0:
-      return 'Logistics page with terms & conditions';
-    case 1:
-      return <SignUpForm />;
-    case 2:
-      return 'This is the bit I really care about!';
-    default:
-      return 'Uknown stepIndex';
-  }
-}
-
 class SignUp extends React.Component {
   state = {
     activeStep: 0,
@@ -62,6 +48,22 @@ class SignUp extends React.Component {
       activeStep: 0,
     });
   };
+
+  getStepContent(stepIndex) {
+    const form = {SignUpForm};
+    const { classes } = this.props;
+    
+    switch (stepIndex) {
+      case 0:
+        return (<Typography className={classes.instructions}>Logistics page with terms and conditions</Typography>);
+      case 1:
+    return (<SignUpForm />);
+      case 2:
+        return (<Typography className={classes.instructions}>This is the bit I really care about!</Typography>);
+      default:
+        return (<Typography className={classes.instructions}>Unknown stepIndex</Typography>);
+    }
+  }
 
   render() {
     const { classes } = this.props;
@@ -89,7 +91,7 @@ class SignUp extends React.Component {
             </div>
           ) : (
             <div>
-              <Typography className={classes.instructions}>{getStepContent(activeStep)}</Typography>
+              <div>{this.getStepContent(activeStep)}</div>
               <div>
                 <Button
                   disabled={activeStep === 0}

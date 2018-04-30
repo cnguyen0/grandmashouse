@@ -51,17 +51,17 @@ class Favorites extends React.Component {
                     <div class="row around-s">
                         <div class="col-xs-4">
                             <div class="box">
-                                <ListingCard usersFave={this.usersFave} />
+                                <ListingCard item={this.usersFave} />
                             </div>
                         </div>
                         <div class="col-xs-4">
                             <div class="box">
-                                <ListingCard usersFave={this.usersFave} />
+                                <ListingCard item={this.usersFave} />
                             </div>
                         </div>
                         <div class="col-xs-4">
                             <div class="box">
-                                <ListingCard usersFave={this.usersFave} />
+                                <ListingCard item={this.usersFave} />
                             </div>
                         </div>
                     </div>
