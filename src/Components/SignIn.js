@@ -76,9 +76,9 @@ class SignIn extends React.Component {
 
     return (
       <form noValidate autoComplete="off" align='center'>
-        <div class="row" margin="normal">
-            <div class="col-xs-12">
-                <div class="box">
+        <div className="row" margin="normal">
+            <div className="col-xs-12">
+                <div className="box">
                   <br/>
                   <br/>
                     <Typography align="center" variant="headline" component="h1">
@@ -88,24 +88,24 @@ class SignIn extends React.Component {
             </div>
         </div>
 
-        <div class="row" margin="normal">
-            <div align="center" class="col-xs-12">
+        <div className="row" margin="normal">
+            <div align="center" className="col-xs-12">
               <TextField required id="Username" label="Username" defaultValue=""
                 className={classes.textField} margin="normal" />
             </div>
         </div>
 
-        <div class="row" margin="normal">
-            <div align="center" class="col-xs-12">
+        <div className="row" margin="normal">
+            <div align="center" className="col-xs-12">
               <TextField required id="Password" label="Password" defaultValue=""
                 type="password" className={classes.textField} margin="normal" />
           </div>
         </div>
 
 
-        <div class="row" margin="normal">
-            <div class="col-xs-12">
-                <div class="box">
+        <div className="row" margin="normal">
+            <div className="col-xs-12">
+                <div className="box">
                   <br/>
                   <br/>
                   <Button variant="raised" color="primary" className={classes.button}>
