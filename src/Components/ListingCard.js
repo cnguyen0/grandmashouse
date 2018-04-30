@@ -11,6 +11,7 @@ import ListingDialog from './ListingDialog'
 const styles = theme => ({
   card: {
     maxWidth: 400,
+    textAlign: 'left'
   },
   media: {
     height: 194,
@@ -47,16 +48,29 @@ class ListingCard extends React.Component {
       <div>
         <Card className={classes.card}>
           <CardHeader
+            title={this.props.item.title}
             action={
-              <IconButton aria-label="Add to favorites">
-                <FavoriteIcon style={{color: this.state.liked ? 'red' : ''}} onClick={this.handleLiked}/>
-              </IconButton>
+              <div>
+                <div style={{display: 'inline-block'}}>
+                <ListingDialog
+                title={this.props.item.title}
+                details="Not quite sure what to put in this space. I wanted it to be empty but it makes the cards smaller
+                and I dont like that at all. So I was thinking we can perhaps add more information or description
+                from the favorites you know?"
+                image={this.props.item.image}
+                />
+                </div>
+                <div style={{display: 'inline-block'}}>
+                <IconButton aria-label="Add to favorites">
+                  <FavoriteIcon style={{color: this.state.liked ? 'red' : ''}} onClick={this.handleLiked}/>
+                </IconButton>
+                </div>
+              </div>
             }
-            title={this.props.usersFave.title}
           />
           <CardMedia
             className={classes.media}
-            image={this.props.usersFave.image}
+            image={this.props.item.image}
             title="Contemplative Reptile"
           />
           <CardContent>
@@ -65,13 +79,6 @@ class ListingCard extends React.Component {
               and I dont like that at all. So I was thinking we can perhaps add more information or description
               from the favorites you know?
             </Typography>
-            <ListingDialog
-              title={this.props.usersFave.title}
-              details="Not quite sure what to put in this space. I wanted it to be empty but it makes the cards smaller
-              and I dont like that at all. So I was thinking we can perhaps add more information or description
-              from the favorites you know?"
-              image={this.props.usersFave.image}
-            />
           </CardContent>
         </Card>
       </div>
