@@ -30,8 +30,9 @@ class ContentPage extends React.Component {
                     <Typography variant="headline" component="h1">
                         {this.props.title}
                     </Typography>
-                    <Typography component="p">
-                        <div dangerouslySetInnerHTML={this.readTxtFile(this.props.txtFile)} ></div>
+                    <Typography>
+                    <div dangerouslySetInnerHTML={this.readTxtFile(this.props.txtFile)}>
+                    </div>
                     </Typography>
                 </Paper>
             </div>

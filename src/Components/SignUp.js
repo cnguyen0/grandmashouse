@@ -4,7 +4,12 @@ import { withStyles } from 'material-ui/styles';
 import Stepper, { Step, StepLabel } from 'material-ui/Stepper';
 import Button from 'material-ui/Button';
 import Typography from 'material-ui/Typography';
-import SignUpForm from './SignUpForm.js'; //TODO: can add this to one of the steps
+import SignUpForm from './SignUpForm.js';
+import ContentPage from './ContentPage';
+import Checkbox from 'material-ui/Checkbox';
+import { FormGroup, FormControlLabel } from 'material-ui/Form';
+
+
 //Royce: Sample Stepper with material-ui-next
 const styles = theme => ({
   root: {
@@ -17,6 +22,9 @@ const styles = theme => ({
     marginTop: theme.spacing.unit,
     marginBottom: theme.spacing.unit,
   },
+  checkbox: {
+    margin: '20px'
+  }
 });
 
 function getSteps() {
@@ -26,6 +34,7 @@ function getSteps() {
 class SignUp extends React.Component {
   state = {
     activeStep: 0,
+    tosCheck: false
   };
 
   handleNext = () => {
@@ -48,12 +57,32 @@ class SignUp extends React.Component {
     });
   };
 
+  handleChange = () => {
+    this.setState({tosCheck: !this.state.tosCheck})
+  }
+
   getStepContent(stepIndex) {
     const { classes } = this.props;
     
     switch (stepIndex) {
       case 0:
-        return (<Typography className={classes.instructions}>Logistics page with terms and conditions</Typography>);
+        return (
+          <div>
+            <ContentPage
+              title={'Grandma\'s House Terms of Services'}
+              txtFile='./termsofservice.txt'
+            />
+            <FormControlLabel className={classes.checkbox}
+              control={
+                <Checkbox
+                  color="secondary"
+                  onChange={this.handleChange}
+                />
+              }
+              label="I agree to the Terms of Services"
+            />
+          </div>
+        );
       case 1:
     return (<SignUpForm />);
       case 2:
@@ -98,7 +127,7 @@ class SignUp extends React.Component {
                 >
                   Back
                 </Button>
-                <Button variant="raised" color="primary" onClick={this.handleNext}>
+                <Button variant="raised" color="primary" onClick={this.handleNext} disabled={!this.state.tosCheck}>
                   {activeStep === steps.length - 1 ? 'Finish' : 'Next'}
                 </Button>
               </div>
