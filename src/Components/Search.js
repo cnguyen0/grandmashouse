@@ -8,6 +8,7 @@ import Paper from 'material-ui/Paper';
 import { MenuItem } from 'material-ui/Menu';
 import { withStyles } from 'material-ui/styles';
 
+
 const suggestions = [
     {label: 'Pasta'},
     {label: 'Spaghetti'},
@@ -21,7 +22,7 @@ const suggestions = [
 
 function renderInput(inputProps) {
     const { classes, ref, ...other } = inputProps;
-  
+
     return (
       <TextField
         fullWidth
@@ -35,11 +36,11 @@ function renderInput(inputProps) {
       />
     );
   }
-  
+
   function renderSuggestion(suggestion, { query, isHighlighted }) {
     const matches = match(suggestion.label, query);
     const parts = parse(suggestion.label, matches);
-  
+
     return (
       <MenuItem selected={isHighlighted} component="div">
         <div>
@@ -58,40 +59,40 @@ function renderInput(inputProps) {
       </MenuItem>
     );
   }
-  
+
   function renderSuggestionsContainer(options) {
     const { containerProps, children } = options;
-  
+
     return (
       <Paper {...containerProps} square>
         {children}
       </Paper>
     );
   }
-  
+
   function getSuggestionValue(suggestion) {
     return suggestion.label;
   }
-  
+
   function getSuggestions(value) {
     const inputValue = value.trim().toLowerCase();
     const inputLength = inputValue.length;
     let count = 0;
-  
+
     return inputLength === 0
       ? []
       : suggestions.filter(suggestion => {
           const keep =
             count < 5 && suggestion.label.toLowerCase().slice(0, inputLength) === inputValue;
-  
+
           if (keep) {
             count += 1;
           }
-  
+
           return keep;
         });
   }
-  
+
   const styles = theme => ({
     container: {
       flexGrow: 1,
@@ -115,34 +116,34 @@ function renderInput(inputProps) {
       listStyleType: 'none',
     },
   });
-  
+
   class IntegrationAutosuggest extends React.Component {
     state = {
       value: '',
       suggestions: [],
     };
-  
+
     handleSuggestionsFetchRequested = ({ value }) => {
       this.setState({
         suggestions: getSuggestions(value),
       });
     };
-  
+
     handleSuggestionsClearRequested = () => {
       this.setState({
         suggestions: [],
       });
     };
-  
+
     handleChange = (event, { newValue }) => {
       this.setState({
         value: newValue,
       });
     };
-  
+
     render() {
       const { classes } = this.props;
-  
+
       return (
         <Autosuggest
           theme={{
@@ -168,9 +169,9 @@ function renderInput(inputProps) {
       );
     }
   }
-  
+
   IntegrationAutosuggest.propTypes = {
     classes: PropTypes.object.isRequired,
   };
-  
+
   export default withStyles(styles)(IntegrationAutosuggest);

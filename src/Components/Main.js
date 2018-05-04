@@ -40,8 +40,8 @@ const Main = () => (
       <Route path='/reservations' component={Reservations}/>
       <Route path='/signin' component={SignIn}/>
       <Route path='/signup' component={SignUp}/>
-      <Route path='/learnmore-homechef' render={() => <LearnMore image={howchef} />}/>
-      <Route path='/learnmore-eater' render={() => <LearnMore image={howeater} />}/>
+      <Route path='/learnmore-homechef' render={() => <LearnMore image={howchef} type='Home-Chefs'/>}/>
+      <Route path='/learnmore-eater' render={() => <LearnMore image={howeater} type='Eaters'/>}/>
       <Route path='/myaccount' component={MyAccount}/>
       <Route path='/profile' component={Profile}/>
       <Route path='/FAQ' component={FAQ}/>
