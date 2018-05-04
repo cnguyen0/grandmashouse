@@ -50,6 +50,23 @@ section {
   display: flex;
 }
 
+#LandAbout {
+  background: rgb(89, 187, 174);
+  text-align: center;
+}
+
+#AboutText {
+  font-size: 20px;
+  width: 70%;
+  text-align: justify;
+  margin: auto;
+}
+
+h2 {
+  color: rgb(245, 241, 241);
+  text-shadow: 2px 2px black;
+}
+
 #LandText {
   text-align: center;
   background: rgba(34,34,34,0.75);
@@ -89,6 +106,8 @@ h1 {
   padding: 5px;
   margin: 5px;
 }
+
+
 /* end of Aindra's testing things */
 
 #HomeBtn {
@@ -135,3 +154,4 @@ footer {
 .common-connection-third {
   flex: 32%;
 }
+

@@ -39,6 +39,9 @@ class LandingPage extends React.Component {
                 </section>
                 <section id="LandAbout">
                     <h2> About Us </h2>
+                    <p id="AboutText"> Grandma’s House provides a platform for two communities, Chefs and Eaters, to meet. Home chefs share their love of cooking, decide their own work hours, and benefit from additional income. Eaters get to experience new cuisines prepared by their local neighbors.
+Grandma’s House fosters a greater sense of community, because when it comes to food, love is the most important ingredient.
+</p>
                 </section>
 
             </div>
