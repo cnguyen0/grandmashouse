@@ -12,7 +12,8 @@ import howchef from '../img/How-it-works-Chef.jpg'
 import howeater from '../img/How-it-works-Eater.jpg'
 import MyAccount from './MyAccount';
 import Profile from './Profile';
-import FAQ from './FAQ'
+import FAQ from './FAQ';
+import SearchResults from './SearchResults';
 
 
 const Terms = (props) => {
@@ -22,6 +23,10 @@ const Terms = (props) => {
         txtFile='./termsofservice.txt'
       />
     );
+}
+
+let SearchParams = () => {
+  // http get call?
 }
 
 // The Main component renders one of the three provided
@@ -45,6 +50,7 @@ const Main = () => (
       <Route path='/myaccount' component={MyAccount}/>
       <Route path='/profile' component={Profile}/>
       <Route path='/FAQ' component={FAQ}/>
+      <Route path='/search' component={SearchResults}/>
 
     </Switch>
   </main>

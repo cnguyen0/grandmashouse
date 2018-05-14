@@ -43,7 +43,7 @@ class ListingCard extends React.Component {
 
   render() {
     const { classes } = this.props;
-
+        
     return (
       <div>
         <Card className={classes.card}>

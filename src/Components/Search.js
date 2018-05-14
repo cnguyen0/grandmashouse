@@ -25,6 +25,7 @@ function renderInput(inputProps) {
    
    function _handleKeyPress(e) {
       if (e.key === 'Enter') {
+        // change routing!
         console.log('do validate');
       }
     }
