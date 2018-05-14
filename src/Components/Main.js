@@ -25,8 +25,8 @@ const Terms = (props) => {
     );
 }
 
-let SearchParams = () => {
-  // http get call?
+const SearchPage = ({ match }) => {
+  return (<SearchResults query={match.params.query}/>)
 }
 
 // The Main component renders one of the three provided
@@ -50,7 +50,7 @@ const Main = () => (
       <Route path='/myaccount' component={MyAccount}/>
       <Route path='/profile' component={Profile}/>
       <Route path='/FAQ' component={FAQ}/>
-      <Route path='/search' component={SearchResults}/>
+      <Route path='/search/:query' component={SearchPage}/>
 
     </Switch>
   </main>

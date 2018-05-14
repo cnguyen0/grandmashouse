@@ -1,4 +1,5 @@
 import React from 'react';
+import { Redirect } from 'react-router'
 import PropTypes from 'prop-types';
 import Autosuggest from 'react-autosuggest';
 import match from 'autosuggest-highlight/match';
@@ -21,12 +22,11 @@ const suggestions = [
 ];
 
 function renderInput(inputProps) {
-    const { classes, ref, ...other } = inputProps;
+  const { classes, ref, ...other } = inputProps;
    
    function _handleKeyPress(e) {
       if (e.key === 'Enter') {
-        // change routing!
-        console.log('do validate');
+        window.location.replace('/search/' + e.target.value);
       }
     }
 
