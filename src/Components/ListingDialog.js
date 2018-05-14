@@ -91,6 +91,9 @@ class FullScreenDialog extends React.Component {
               {this.props.details}
             </Typography>
             <Typography variant="headline" component="h2">
+              Recommended Donation: $10/Person
+            </Typography>
+            <Typography variant="headline" component="h2">
               Make a Reservation!
             </Typography>
               <form className={classes.container} noValidate>
@@ -105,7 +108,7 @@ class FullScreenDialog extends React.Component {
                   }}
                 />
               </form>
-              <ReserveSnackBar />
+              <ReserveSnackBar onClick={this.handleClose}/>
         </Dialog>
       </div>
     );
