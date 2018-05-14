@@ -10,8 +10,10 @@ import Typography from 'material-ui/Typography';
 import CloseIcon from '@material-ui/icons/Close';
 import Slide from 'material-ui/transitions/Slide';
 import "react-responsive-carousel/lib/styles/carousel.min.css";
+import TextField from 'material-ui/TextField';
 
 import { Carousel } from "react-responsive-carousel";
+import ReserveSnackBar from './ReserveSnackBar';
 
 const styles = {
   appBar: {
@@ -88,8 +90,22 @@ class FullScreenDialog extends React.Component {
             <Typography component="p">
               {this.props.details}
             </Typography>
-            <br />
-            Add Reservation Component here.
+            <Typography variant="headline" component="h2">
+              Make a Reservation!
+            </Typography>
+              <form className={classes.container} noValidate>
+                <TextField
+                  id="datetime-local"
+                  label="Pick-up time Request"
+                  type="datetime-local"
+                  defaultValue="2017-05-24T10:30"
+                  className={classes.textField}
+                  InputLabelProps={{
+                    shrink: true,
+                  }}
+                />
+              </form>
+              <ReserveSnackBar />
         </Dialog>
       </div>
     );
