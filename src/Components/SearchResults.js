@@ -35,7 +35,13 @@ class SearchResults extends React.Component {
 	componentWillMount = () => {
 		// http call to see how many there are there are!
 		// probably some sort of sorting method that queries hella results.
-		this.setState({results: allItems});
+		let final = [];
+		allItems.forEach(item => {
+			if (item.title.toLowerCase().includes(this.props.query.toLowerCase())) {
+				final.push(item);
+			}
+		});
+		this.setState({results: final});
 	}
 
 	render() {
