@@ -1,6 +1,7 @@
 import React from 'react';
 import Button from 'material-ui/Button';
 import { Link } from 'react-router-dom';
+import FAQ from './FAQ.js';
 
 const LearnMoreChef = props => <Link to="/learnmore-homechef" {...props} />
 const LearnMoreEater = props => <Link to="/learnmore-eater" {...props} />
@@ -42,7 +43,9 @@ class LandingPage extends React.Component {
                     <p id="AboutText"> Grandma’s House provides a platform for two communities, Chefs and Eaters, to meet. Home chefs share their love of cooking, decide their own work hours, and benefit from additional income. Eaters get to experience new cuisines prepared by their local neighbors.
 Grandma’s House fosters a greater sense of community, because when it comes to food, love is the most important ingredient.
 </p>
+                    <FAQ />
                 </section>
+
 
             </div>
         )

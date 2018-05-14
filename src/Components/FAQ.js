@@ -23,9 +23,7 @@ function FAQ(props) {
   const { classes } = props;
   return (
     <div className={classes.root}>
-      <Typography variant="title" color="inherit">
-        Frequently Asked Questions
-      </Typography>
+      <h2> Frequently Asked Questions </h2>
       <br/>
       <ExpansionPanel>
         <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
