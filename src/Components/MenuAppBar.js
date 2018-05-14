@@ -63,7 +63,7 @@ class MenuAppBar extends React.Component {
             <Typography variant="title" color="inherit">
               <a id='HomeBtn' href='/'>Grandma&#39;s House</a>
             </Typography>
-            <Search className={classes.search}/>
+            <Search className={classes.search} />
             <Button variant="raised" color="primary" className={classes.button} component={Favorites}>
               Favorites
             </Button>

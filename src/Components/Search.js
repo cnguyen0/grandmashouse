@@ -22,6 +22,12 @@ const suggestions = [
 
 function renderInput(inputProps) {
     const { classes, ref, ...other } = inputProps;
+   
+   function _handleKeyPress(e) {
+      if (e.key === 'Enter') {
+        console.log('do validate');
+      }
+    }
 
     return (
       <TextField
@@ -33,6 +39,7 @@ function renderInput(inputProps) {
           },
           ...other,
         }}
+        onKeyPress={_handleKeyPress}        
       />
     );
   }
