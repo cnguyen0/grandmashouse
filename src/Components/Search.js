@@ -1,5 +1,5 @@
 import React from 'react';
-import { Redirect } from 'react-router'
+import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import Autosuggest from 'react-autosuggest';
 import match from 'autosuggest-highlight/match';
@@ -8,18 +8,8 @@ import TextField from 'material-ui/TextField';
 import Paper from 'material-ui/Paper';
 import { MenuItem } from 'material-ui/Menu';
 import { withStyles } from 'material-ui/styles';
+import { allItems } from './SearchResults';
 
-
-const suggestions = [
-    {label: 'Pasta'},
-    {label: 'Spaghetti'},
-    {label: 'Apple'},
-    {label: 'Banana'},
-    {label: 'Cookies'},
-    {label: 'Stirfry'},
-    {label: 'Mango'},
-    {label: 'Pad Thai'},
-];
 
 function renderInput(inputProps) {
   const { classes, ref, ...other } = inputProps;
@@ -46,8 +36,8 @@ function renderInput(inputProps) {
   }
 
   function renderSuggestion(suggestion, { query, isHighlighted }) {
-    const matches = match(suggestion.label, query);
-    const parts = parse(suggestion.label, matches);
+    const matches = match(suggestion.title, query);
+    const parts = parse(suggestion.title, matches);
 
     return (
       <MenuItem selected={isHighlighted} component="div">
@@ -79,7 +69,7 @@ function renderInput(inputProps) {
   }
 
   function getSuggestionValue(suggestion) {
-    return suggestion.label;
+    return suggestion.title;
   }
 
   function getSuggestions(value) {
@@ -89,9 +79,9 @@ function renderInput(inputProps) {
 
     return inputLength === 0
       ? []
-      : suggestions.filter(suggestion => {
+      : allItems.filter(suggestion => {
           const keep =
-            count < 5 && suggestion.label.toLowerCase().slice(0, inputLength) === inputValue;
+            count < 5 && suggestion.title.toLowerCase().slice(0, inputLength) === inputValue;
 
           if (keep) {
             count += 1;
