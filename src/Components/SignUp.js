@@ -7,7 +7,7 @@ import Typography from 'material-ui/Typography';
 import SignUpForm from './SignUpForm.js';
 import ContentPage from './ContentPage';
 import Checkbox from 'material-ui/Checkbox';
-import { FormGroup, FormControlLabel } from 'material-ui/Form';
+import { FormControlLabel } from 'material-ui/Form';
 
 
 //Royce: Sample Stepper with material-ui-next

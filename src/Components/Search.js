@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import Autosuggest from 'react-autosuggest';
 import match from 'autosuggest-highlight/match';
@@ -8,7 +7,7 @@ import TextField from 'material-ui/TextField';
 import Paper from 'material-ui/Paper';
 import { MenuItem } from 'material-ui/Menu';
 import { withStyles } from 'material-ui/styles';
-import { allItems } from './SearchResults';
+import { allItems } from './LocalDatabase';
 
 
 function renderInput(inputProps) {

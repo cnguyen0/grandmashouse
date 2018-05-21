@@ -5,7 +5,6 @@ import Paper from 'material-ui/Paper';
 import Button from 'material-ui/Button';
 import './App.css';
 import { Link } from 'react-router-dom';
-import Typography from 'material-ui/Typography';
 
 
 const SignUp = props => <Link to="/signup" {...props} />
@@ -27,7 +26,7 @@ class LearnMore extends React.Component {
             <div className='learnmore'>
                 <Paper elevation={3}>
                     <div>
-                        <img src={this.props.image} style={{display: "block", marginLeft: "auto", marginRight: "auto", width: "60%"}} />
+                        <img src={this.props.image} style={{display: "block", marginLeft: "auto", marginRight: "auto", width: "60%"}} alt='idk something'/>
 
                         <Button variant="raised" color="secondary" style={{fontSize: '50px', display: "block", marginLeft: "auto", marginRight: "auto", width: "50%"}} className={classes.button} component={SignUp}>
                             Sign Up!

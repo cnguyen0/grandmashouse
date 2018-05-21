@@ -11,39 +11,70 @@ import CloseIcon from '@material-ui/icons/Close';
 import Slide from 'material-ui/transitions/Slide';
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import TextField from 'material-ui/TextField';
+import Input from '@material-ui/core/Input';
+import InputLabel from '@material-ui/core/InputLabel';
+import MaskedInput from 'react-text-mask'
+import Fade from 'material-ui/transitions/Fade';
+import Snackbar from 'material-ui/Snackbar';
 
 import { Carousel } from "react-responsive-carousel";
-import ReserveSnackBar from './ReserveSnackBar';
+import Paper from 'material-ui/Paper/Paper';
 
-const styles = {
+const styles = theme => ({
   appBar: {
     position: 'relative',
   },
   flex: {
     flex: 1,
   },
-};
+  root: theme.mixins.gutters({
+    paddingTop: 16,
+    paddingBottom: 16,
+    margin: 30,
+    marginTop: theme.spacing.unit * 3,
+  }),
+});
 
 function Transition(props) {
   return <Slide direction="up" {...props} />;
 }
 
+function TextMaskCustom(props) {
+  const { inputRef, ...other } = props;
+
+  return (
+    <MaskedInput
+      {...other}
+      ref={inputRef}
+      mask={['(', /[1-9]/, /\d/, /\d/, ')', ' ', /\d/, /\d/, /\d/, '-', /\d/, /\d/, /\d/, /\d/]}
+      placeholderChar={'\u2000'}
+      showMask
+    />
+  );
+}
+
+TextMaskCustom.propTypes = {
+  inputRef: PropTypes.func.isRequired,
+};
+
 class FullScreenDialog extends React.Component {
   state = {
+    textmask: '(  )    -    ',
     open: false,
+    sbOpen: false
   };
-
-  images = [
-    'https://img.sndimg.com/food/image/upload/w_896,h_504,c_fill,fl_progressive,q_80/v1/img/recipes/14/81/72/vNuD41wlTe4jnwh8XngJ_Food-com-2017-05-311586.jpg',
-    'https://img.sndimg.com/food/image/upload/w_896,h_504,c_fill,fl_progressive,q_80/v1/img/recipes/14/81/72/vNuD41wlTe4jnwh8XngJ_Food-com-2017-05-311586.jpg'
-  ];
 
   handleClickOpen = () => {
     this.setState({ open: true });
   };
 
   handleClose = () => {
-    this.setState({ open: false });
+    this.setState({ open: false, sbOpen: true });
+  };
+
+  handleSBClose = () => {
+    this.setState({ sbOpen: false });
+
   };
 
   render() {
@@ -67,46 +98,111 @@ class FullScreenDialog extends React.Component {
               <Typography variant="title" color="inherit" className={classes.flex}>
                 {this.props.title}
               </Typography>
-              <Button color="inherit" onClick={this.handleClose}>
-                save
-              </Button>
             </Toolbar>
           </AppBar>
 
           <div style={{width: '70%', margin: "0 auto"}}>
             <Carousel showArrows={true} dynamicHeight={true} swipeable={true} useKeyboardArrows={true} style={{margin: "0 auto", textAlign:"center"}}>
-              <div>
-                  <img src="https://img.sndimg.com/food/image/upload/w_896,h_504,c_fill,fl_progressive,q_80/v1/img/recipes/14/81/72/vNuD41wlTe4jnwh8XngJ_Food-com-2017-05-311586.jpg" />
-              </div>
-              <div>
-                  <img src="https://img.sndimg.com/food/image/upload/w_896,h_504,c_fill,fl_progressive,q_80/v1/img/recipes/14/81/72/vNuD41wlTe4jnwh8XngJ_Food-com-2017-05-311586.jpg" />
-              </div>
+              {this.props.item.image.map((imgSrc, i) => {
+                return (<div><img src={imgSrc} key={i} alt='listing food'/></div>)
+              })}
             </Carousel>
           </div>
 
-            <Typography variant="headline" component="h2">
-              Chef Description
-            </Typography>
-            <Typography component="p">
-              {this.props.details}
-            </Typography>
-            <Typography variant="headline" component="h2">
-              Make a Reservation!
-            </Typography>
-              <form className={classes.container} noValidate>
-                <TextField
-                  id="datetime-local"
-                  label="Pick-up time Request"
-                  type="datetime-local"
-                  defaultValue="2017-05-24T10:30"
-                  className={classes.textField}
-                  InputLabelProps={{
-                    shrink: true,
-                  }}
-                />
-              </form>
-              <ReserveSnackBar />
+          <div className="row around-s">
+            <div className="col-xs-6">
+                <div className="box">
+                  <Paper className={classes.root}  elevation={4}>
+                    <Typography variant="headline" component="h1">
+                      {this.props.item.title + ' | ' + this.props.item.price}
+                    </Typography>
+                    <Typography variant="headline" component="h1">
+                      {this.props.item.city + ', ' + this.props.item.state}
+                    </Typography>
+                    <Typography component="p">
+                      {this.props.item.description}
+                    </Typography>
+                    <hr />
+                    <Typography variant="headline" component="h1">
+                      About the Chef
+                    </Typography>
+                    <img src={this.props.item.chef.img} style={{borderRadius: '50%', width: '75px', float: 'left'}} alt='user avatar' />
+                    <Typography variant="headline" component="h1">
+                      {this.props.item.chef.firstName + ' ' + this.props.item.chef.lastName}
+                    </Typography>
+                    <Typography component="p">
+                      {this.props.item.chef.bio}
+                    </Typography>
+                    <br />
+                    <hr style={{clear: 'both'}}/>
+                    <Typography variant="headline" component="h1">
+                      Reviews (0)
+                    </Typography>
+                    <Typography component="p">
+                      Be the first to review!
+                    </Typography>
+                  </Paper>
+                </div>
+            </div>
+            <div className="col-xs-6">
+                <div className="box">
+                <Paper className={classes.root}  elevation={4}>
+                  <Typography variant="headline" component="h1">
+                    Make a Reservation!
+                  </Typography>
+                  <form className={classes.container} noValidate>
+                    <InputLabel>Phone Number</InputLabel>
+                    <Input
+                      label='Phone Number'
+                      value={this.state.textmask}
+                      inputComponent={TextMaskCustom}
+                      inputlabelprops={{
+                        shrink: true,
+                      }}
+                      required={true}
+                    />
+                    <br />
+                    <br />
+                    <TextField
+                      id="datetime-local"
+                      label="Pick-up time Request"
+                      type="datetime-local"
+                      defaultValue="2017-05-24T10:30"
+                      className={classes.textField}
+                      InputLabelProps={{
+                        shrink: true,
+                      }}
+                      required={true}
+                    />
+                    <br />
+                    <br />
+                    <TextField
+                      label="Quantity"
+                      type="number"
+                      InputLabelProps={{
+                        shrink: true,
+                      }}
+                      required={true}
+                    />
+                  </form>
+                  <br />
+                  <br />
+                  <Button onClick={this.handleClose} variant="raised" color="secondary">Reserve</Button>
+                </Paper>
+                </div>
+            </div>
+          </div>
         </Dialog>
+        <Snackbar
+          open={this.state.sbOpen}
+          onClose={this.handleSBClose}
+          transition={Fade}
+          SnackbarContentProps={{
+            'aria-describedby': 'message-id',
+          }}
+          autoHideDuration={4000}
+          message={<span id="message-id">Reservation Request Sent!</span>}
+        />
       </div>
     );
   }

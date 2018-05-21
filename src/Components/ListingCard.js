@@ -53,12 +53,8 @@ class ListingCard extends React.Component {
               <div>
                 <div style={{display: 'inline-block'}}>
                 <ListingDialog
-                rsvp={this.props.rsvp}
-                title={this.props.item.title}
-                details="Not quite sure what to put in this space. I wanted it to be empty but it makes the cards smaller
-                and I dont like that at all. So I was thinking we can perhaps add more information or description
-                from the favorites you know?"
-                image={this.props.item.image}
+                  rsvp={this.props.rsvp}
+                  item={this.props.item}
                 />
                 </div>
                 <div style={{display: 'inline-block'}}>
@@ -71,7 +67,7 @@ class ListingCard extends React.Component {
           />
           <CardMedia
             className={classes.media}
-            image={this.props.item.image}
+            image={this.props.item.image[0]}
             title="Contemplative Reptile"
           />
           <CardContent>

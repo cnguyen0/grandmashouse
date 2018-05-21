@@ -30,8 +30,19 @@ const styles = theme => ({
 
 class Favorites extends React.Component {
     usersFave = {
-        title: 'Beyonce',
-        image: "https://img.sndimg.com/food/image/upload/w_896,h_504,c_fill,fl_progressive,q_80/v1/img/recipes/14/81/72/vNuD41wlTe4jnwh8XngJ_Food-com-2017-05-311586.jpg"
+        title: 'Garlic Pasta',
+        image: ["https://img.sndimg.com/food/image/upload/w_896,h_504,c_fill,fl_progressive,q_80/v1/img/recipes/14/81/72/vNuD41wlTe4jnwh8XngJ_Food-com-2017-05-311586.jpg", "https://img.sndimg.com/food/image/upload/w_896,h_504,c_fill,fl_progressive,q_80/v1/img/recipes/14/81/72/vNuD41wlTe4jnwh8XngJ_Food-com-2017-05-311586.jpg"],
+        description: 'Not quite sure what to put in this space. I wanted it to be empty but it makes the cards smaller and I dont like that at all. So I was thinking we can perhaps add more information or description from the favorites you know?',
+        price: '$10',
+        city: 'Seattle',
+        state: 'WA',
+        zip: 98105,
+        chef: {
+            firstName: 'Frank',
+            lastName: 'Tomato',
+            bio: 'This is my bio and I have been cooking for this many years and so forth.',
+            img: 'http://www.lovemarks.com/wp-content/uploads/profile-avatars/default-avatar-ponsy-deer.png'
+        }
     }
 
     render() {
