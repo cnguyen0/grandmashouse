@@ -8,6 +8,8 @@ import red from 'material-ui/colors/red';
 import FavoriteIcon from 'material-ui-icons/Favorite';
 import ListingDialog from './ListingDialog'
 
+import { favorites } from './LocalDatabase';
+
 const styles = theme => ({
   card: {
     maxWidth: 400,
@@ -35,9 +37,12 @@ const styles = theme => ({
 });
 
 class ListingCard extends React.Component {
-  state = { liked: false };
+  state = { 
+    liked: favorites.includes(this.props.item)
+  };
 
   handleLiked = () => {
+    favorites.push(this.props.item);
     this.setState({ liked: !this.state.liked });
   };
 

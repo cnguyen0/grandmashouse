@@ -26,7 +26,6 @@ const styles = theme => ({
 
 // TODO: MAKE PRETTY!!!
 class ReservationItem extends React.Component {
-
     render() {
         const { classes } = this.props;
         return (

@@ -3,6 +3,8 @@ import PropTypes from 'prop-types';
 import { withStyles } from 'material-ui/styles';
 import ReservationItem from './ReservationItem';
 
+import { reservations } from './LocalDatabase';
+
 // ROUTE localhost:3000/reservations
 
 const styles = theme => ({
@@ -55,7 +57,11 @@ class Reservations extends React.Component {
     render() {
         return (
             <div>
-                <ReservationItem item={this.userFave} rsvp={this.rsvpItem} />
+                { reservations.length === 0 ? 'You currently have no reservations. Make your first reservations today!' :
+                    reservations.map((rsvp, i) => {
+                        return (<ReservationItem item={this.userFave} rsvp={rsvp} />  )
+                    })                 
+                }
             </div>
         )
     }

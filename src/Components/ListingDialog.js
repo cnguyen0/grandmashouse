@@ -16,6 +16,8 @@ import InputLabel from '@material-ui/core/InputLabel';
 import MaskedInput from 'react-text-mask'
 import Fade from 'material-ui/transitions/Fade';
 import Snackbar from 'material-ui/Snackbar';
+import FormControl from '@material-ui/core/FormControl';
+import { reservations } from './LocalDatabase';
 
 import { Carousel } from "react-responsive-carousel";
 import Paper from 'material-ui/Paper/Paper';
@@ -33,6 +35,9 @@ const styles = theme => ({
     margin: 30,
     marginTop: theme.spacing.unit * 3,
   }),
+  formControl: {
+    margin: theme.spacing.unit,
+  },
 });
 
 function Transition(props) {
@@ -61,7 +66,9 @@ class FullScreenDialog extends React.Component {
   state = {
     textmask: '(  )    -    ',
     open: false,
-    sbOpen: false
+    sbOpen: false,
+    quantity: 1,
+    pickUpTime: ''
   };
 
   handleClickOpen = () => {
@@ -69,12 +76,41 @@ class FullScreenDialog extends React.Component {
   };
 
   handleClose = () => {
-    this.setState({ open: false, sbOpen: true });
+    this.setState({ 
+      open: false, 
+      sbOpen: true,
+      quantity: 1,
+      pickUpTime: '',
+      textmask: '(  )    -    '
+     });
   };
 
   handleSBClose = () => {
     this.setState({ sbOpen: false });
 
+  };
+
+  handleSubmit = () => {
+    reservations.push({
+      id: reservations.length + 1,
+      quantity: this.state.quantity,
+      pickUpTime: this.state.pickUpTime,
+      phoneNumber: this.state.phoneNumber,
+      listingID: this.props.item.id
+    });
+    this.handleClose();
+  }
+
+  handlePhoneNumberChange = event => {
+    this.setState({ textmask: event.target.value });
+  };
+
+  handlePickUpChange = event => {
+    this.setState({ pickUpTime: event.target.value });
+  };
+
+  handleQuantityChange = event => {
+    this.setState({ quantity: event.target.value });
   };
 
   render() {
@@ -150,9 +186,10 @@ class FullScreenDialog extends React.Component {
                   <Typography variant="headline" component="h1">
                     Make a Reservation!
                   </Typography>
-                  <form className={classes.container} noValidate>
-                    <InputLabel>Phone Number</InputLabel>
+                  <FormControl className={classes.formControl}>
+                    <InputLabel htmlFor="name-simple">Phone Number</InputLabel>
                     <Input
+                      id="name-simple"
                       label='Phone Number'
                       value={this.state.textmask}
                       inputComponent={TextMaskCustom}
@@ -160,22 +197,23 @@ class FullScreenDialog extends React.Component {
                         shrink: true,
                       }}
                       required={true}
+                      onChange={this.handlePhoneNumberChange}
                     />
-                    <br />
-                    <br />
+                  </FormControl>
+                  <FormControl className={classes.formControl}>
                     <TextField
                       id="datetime-local"
                       label="Pick-up time Request"
                       type="datetime-local"
-                      defaultValue="2017-05-24T10:30"
                       className={classes.textField}
                       InputLabelProps={{
                         shrink: true,
                       }}
                       required={true}
+                      onChange={this.handlePickUpChange}
                     />
-                    <br />
-                    <br />
+                  </FormControl>
+                  <FormControl className={classes.formControl}>
                     <TextField
                       label="Quantity"
                       type="number"
@@ -183,11 +221,11 @@ class FullScreenDialog extends React.Component {
                         shrink: true,
                       }}
                       required={true}
+                      onChange={this.handleQuantityChange}
+                      value={this.state.quantity}
                     />
-                  </form>
-                  <br />
-                  <br />
-                  <Button onClick={this.handleClose} variant="raised" color="secondary">Reserve</Button>
+                  </FormControl>
+                  <Button onClick={this.handleSubmit} variant="raised" type="submit" color="secondary">Reserve</Button>
                 </Paper>
                 </div>
             </div>

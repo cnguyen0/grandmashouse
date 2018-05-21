@@ -4,6 +4,7 @@ import { withStyles } from 'material-ui/styles';
 import Paper from 'material-ui/Paper';
 import Typography from 'material-ui/Typography';
 import ListingCard from './ListingCard';
+import { favorites } from './LocalDatabase';
 
 // ROUTE localhost:3000/favorites
 
@@ -13,8 +14,8 @@ const styles = theme => ({
       paddingBottom: 16,
       margin: 50,
       marginTop: theme.spacing.unit * 3,
-      display: 'flex',
-      flexWrap: 'wrap',
+    //   display: 'flex',
+    //   flexWrap: 'wrap',
       justifyContent: 'space-around',
       overflow: 'hidden',
       backgroundColor: theme.palette.background.paper,
@@ -50,7 +51,7 @@ class Favorites extends React.Component {
         return (
             <div>
                 <Paper className={classes.root} elevation={4}>
-                    <div className="row">
+                    <div className="row around-s">
                         <div className="col-xs-12">
                             <div className="box">
                                 <Typography variant="headline" component="h1">
@@ -60,21 +61,17 @@ class Favorites extends React.Component {
                         </div>
                     </div>
                     <div className="row around-s">
-                        <div className="col-xs-4">
-                            <div className="box">
-                                <ListingCard item={this.usersFave} />
+                    { favorites.length === 0 ? 'You currently have no favorites. View more food posts to add to your favorites!' :
+                        favorites.map((fave, i) => {
+                            return (
+                                <div className="col-xs-4">
+                                <div className="box">
+                                    <ListingCard item={fave} />
+                                </div>
                             </div>
-                        </div>
-                        <div className="col-xs-4">
-                            <div className="box">
-                                <ListingCard item={this.usersFave} />
-                            </div>
-                        </div>
-                        <div className="col-xs-4">
-                            <div className="box">
-                                <ListingCard item={this.usersFave} />
-                            </div>
-                        </div>
+                            )
+                        })                 
+                    }
                     </div>
                 </Paper>
             </div>
