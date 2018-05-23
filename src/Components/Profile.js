@@ -8,6 +8,8 @@ import { faStar } from '@fortawesome/fontawesome-free-solid'
 import ListingCard from './ListingCard';
 import UserAvatarProfile from './UserAvatarProfile';
 
+import { allItems } from './LocalDatabase';
+
 import './App.css';
 
 const styles = theme => ({
@@ -22,10 +24,6 @@ const styles = theme => ({
 
 // ROUTE localhost:3000/profile
 class Profile extends React.Component {
-    item = {
-        title: 'Beyonce',
-        image: "https://img.sndimg.com/food/image/upload/w_896,h_504,c_fill,fl_progressive,q_80/v1/img/recipes/14/81/72/vNuD41wlTe4jnwh8XngJ_Food-com-2017-05-311586.jpg"
-    }
 
     common = {
         img: "http://2.bp.blogspot.com/-Nluqr5JsqIc/Vk1p5T38BzI/AAAAAAAAE7g/NwVhT3ZMPLA/s1600/CuteAvatar2.png",
@@ -66,7 +64,7 @@ class Profile extends React.Component {
                     {/* user's latest posts */}
                     <Paper className={classes.root}  elevation={4}>
                         <Typography variant="headline">Recent Posts</Typography>
-                        <ListingCard item={this.item} />
+                        <ListingCard item={allItems[0]} />
                     </Paper>
 
                     {/* common connection with avatars */}

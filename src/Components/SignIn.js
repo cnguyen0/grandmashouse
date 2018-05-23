@@ -5,6 +5,8 @@ import TextField from 'material-ui/TextField';
 import Typography from 'material-ui/Typography';
 import Button from 'material-ui/Button';
 
+import { loggedIn } from './LocalDatabase';
+
 const styles = theme => ({
   root: {
     width: '90%',
@@ -26,52 +28,23 @@ class SignIn extends React.Component {
     constructor(props) {
         super(props);
 
-        this.state = {
-            isVisible: true
-          }
-
         // Bindings
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
-    state = {
-        name: 'Cat in the Hat',
-        age: '',
-        multiline: 'Controlled',
-        currency: 'EUR',
-      };
+    handleChange = name => event => {
+      this.setState({
+        [name]: event.target.value,
+      });
+    };
 
-      handleChange = name => event => {
-        this.setState({
-          [name]: event.target.value,
-        });
-      };
-
-    handleSubmit(e) {
-        e.preventDefault();
-        this.setState({
-          isVisible: false
-        }, function() {
-          console.log(this.state.isVisible)
-        });
-        return false;
-      }
-
-    //   handleSignIn(e) {
-    //     e.preventDefault() 
-    //     this.setState({
-    //         isVisible: false
-    //     }, function() {
-    //         console.log(this.state.isVisible)
-    //     })
-    //     let username = this.refs.username.value
-    //     let password = this.refs.password.value
-    //     this.props.onSignIn(username, password)
-    //   }
+    handleSubmit() {
+      loggedIn.auth = !loggedIn.auth;
+      window.location.replace('/');
+    }
 
   render() {
     const { classes } = this.props;
-    console.log("Sign Up Form rendered")
 
     return (
       <form noValidate autoComplete="off" align='center'>
@@ -90,14 +63,14 @@ class SignIn extends React.Component {
         <div className="row" margin="normal">
             <div align="center" className="col-xs-12">
               <TextField required id="Username" label="Username" defaultValue=""
-                className={classes.textField} margin="normal" />
+                className={classes.textField} margin="normal" name='username' />
             </div>
         </div>
 
         <div className="row" margin="normal">
             <div align="center" className="col-xs-12">
               <TextField required id="Password" label="Password" defaultValue=""
-                type="password" className={classes.textField} margin="normal" />
+                type="password" className={classes.textField} margin="normal" name='password' />
           </div>
         </div>
 
@@ -107,7 +80,7 @@ class SignIn extends React.Component {
                 <div className="box">
                   <br/>
                   <br/>
-                  <Button variant="raised" color="primary" className={classes.button}>
+                  <Button variant="raised" color="primary" className={classes.button} onClick={this.handleSubmit}>
                     Submit
                   </Button>
                 </div>

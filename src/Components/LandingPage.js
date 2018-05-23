@@ -22,9 +22,6 @@ class LandingPage extends React.Component {
                             <h1> Grandma&#x27;s House </h1>
                             <p id="LandBackgroundText"> The most important ingredient is love </p>
 
-
-
-
                             <Button variant="raised" color="primary" component={LearnMoreChef}>
                                 Chef
                             </Button>
@@ -32,21 +29,28 @@ class LandingPage extends React.Component {
                                 Eater
                             </Button>
 
-
-
-
                         </div>
                     </div>
                 </section>
                 <section id="LandAbout">
+                    <div className="fa-home-con">
+                        <i className="fas fa-home"></i>
+                    </div>
                     <h2> About Us </h2>
                     <p id="AboutText"> Grandma’s House provides a platform for two communities, Chefs and Eaters, to meet. Home chefs share their love of cooking, decide their own work hours, and benefit from additional income. Eaters get to experience new cuisines prepared by their local neighbors.
 Grandma’s House fosters a greater sense of community, because when it comes to food, love is the most important ingredient.
 </p>
+                </section>
+                <section id="OurValuesSection">
+                    <div className="fa-utensils-con">
+                        <i className="fas fa-utensils"></i>
+                    </div>                
+                    <h2>Our Values</h2>
+                    <p>Here at Grandma's House, we strongly believe in cultivating and empowering local communities. By doing so, we care a lot in the home chefs who sign up on our platform by protecting them from harm and ensuring they are earning profit in what they love. We created a donation system to ensure not only chef are getting their money, but eaters are able to pay more if they believe service and food quality is exceptional. Our home chefs are what ties the community together so it is important to keep our chefs safe.</p>  
+                </section>
+                <section id="FAQSection">
                     <FAQ />
                 </section>
-
-
             </div>
         )
     }

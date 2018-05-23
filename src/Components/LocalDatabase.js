@@ -238,3 +238,20 @@ export let chefs = [
         phoneNumber: 1111111111
     }
 ]
+
+export let users = [
+    {
+        id: 1,
+        userName: 'user',
+        password: 'password'
+    },
+    {
+        id: 2,
+        userName: 'chef',
+        password: 'password'
+    }
+]
+
+export const loggedIn = {
+    auth: true
+};

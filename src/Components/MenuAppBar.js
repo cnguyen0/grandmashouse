@@ -12,6 +12,8 @@ import Menu, { MenuItem } from 'material-ui/Menu';
 import Button from 'material-ui/Button';
 import Search from './Search';
 
+import { loggedIn } from './LocalDatabase';
+
 const SignIn = props => <Link to="/signin" {...props} />
 const Reservations = props => <Link to="/reservations" {...props} />
 const Messages = props => <Link to="/messages" {...props} />
@@ -32,12 +34,13 @@ const styles = {
 
 class MenuAppBar extends React.Component {
   state = {
-    auth: true,
+    auth: loggedIn.auth,
     anchorEl: null,
   };
 
   handleChange = (event, checked) => {
     this.setState({ auth: checked });
+    loggedIn.auth = !loggedIn.auth;
   };
 
   handleMenu = event => {

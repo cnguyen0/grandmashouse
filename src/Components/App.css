@@ -52,13 +52,42 @@ section {
 
 #LandAbout {
   background: rgb(89, 187, 174);
+  text-align: left;
+}
+
+.fa-home-con {
+  width: 20%;
+  float: left;
+}
+
+.fa-utensils-con {
+  width: 20%;
+  float: right;
+}
+
+.fa-home {
+  font-size: 9em;
+  color: white;
+}
+
+.fa-utensils {
+  font-size: 9em;
+  color: white;
+}
+
+#FAQSection {
+  background: rgb(239,190,171);
   text-align: center;
+}
+
+#OurValuesSection {
+  background: rgb(177,210,218);
+  text-align: right;
 }
 
 #AboutText {
   font-size: 20px;
-  width: 70%;
-  text-align: justify;
+  width: 80%;
   margin: auto;
 }
 
