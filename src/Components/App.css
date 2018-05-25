@@ -55,6 +55,11 @@ section {
   text-align: left;
 }
 
+#team {
+  background: rgb(185, 156, 238);
+  text-align: left;
+}
+
 .fa-home-con {
   width: 20%;
   float: left;
@@ -88,6 +93,11 @@ section {
 #AboutText {
   font-size: 20px;
   width: 80%;
+  margin: auto;
+}
+
+#teamtxt {
+  font-size: 20px;
   margin: auto;
 }
 
