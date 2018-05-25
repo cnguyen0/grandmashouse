@@ -162,12 +162,12 @@ class FullScreenDialog extends React.Component {
                     <Typography variant="headline" component="h1">
                       About the Chef
                     </Typography>
-                    <img src={this.props.item.chef.img} style={{borderRadius: '50%', width: '75px', float: 'left'}} alt='user avatar' />
+                    <img src={this.props.item.chef[0].img} style={{borderRadius: '50%', width: '75px', float: 'left'}} alt='user avatar' />
                     <Typography variant="headline" component="h1">
-                      {this.props.item.chef.firstName + ' ' + this.props.item.chef.lastName}
+                      {this.props.item.chef[0].firstName + ' ' + this.props.item.chef[0].lastName}
                     </Typography>
                     <Typography component="p">
-                      {this.props.item.chef.bio}
+                      {this.props.item.chef[0].bio}
                     </Typography>
                     <br />
                     <hr style={{clear: 'both'}}/>

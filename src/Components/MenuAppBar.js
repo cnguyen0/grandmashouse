@@ -11,6 +11,7 @@ import AccountCircle from 'material-ui-icons/AccountCircle';
 import Menu, { MenuItem } from 'material-ui/Menu';
 import Button from 'material-ui/Button';
 import Search from './Search';
+import icon from '../img/icon.png'
 
 import { loggedIn } from './LocalDatabase';
 
