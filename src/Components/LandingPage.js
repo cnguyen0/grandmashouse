@@ -1,10 +1,23 @@
 import React from 'react';
+import { withStyles } from 'material-ui/styles';
 import Button from 'material-ui/Button';
 import { Link } from 'react-router-dom';
 import FAQ from './FAQ.js';
 
+
+
 const LearnMoreChef = props => <Link to="/learnmore-homechef" {...props} />
 const LearnMoreEater = props => <Link to="/learnmore-eater" {...props} />
+
+const styles = theme => ({
+    cSquare: {
+        borderRadius: '50%',
+        width: '5%',
+        height: '5%',
+        padding: '1%',
+    },
+
+  });
 
 class LandingPage extends React.Component {
 
@@ -48,6 +61,28 @@ Grandma’s House fosters a greater sense of community, because when it comes to
                     <h2>Our Values</h2>
                     <p>Here at Grandma's House, we strongly believe in cultivating and empowering local communities. By doing so, we care a lot in the home chefs who sign up on our platform by protecting them from harm and ensuring they are earning profit in what they love. We created a donation system to ensure not only chef are getting their money, but eaters are able to pay more if they believe service and food quality is exceptional. Our home chefs are what ties the community together so it is important to keep our chefs safe.</p>  
                 </section>
+                <section id="team">
+                    <div className="fa-home-con">
+                        <img className={this.props.classes.cSquare} src={require('../img/Royboy.jpg')} style={{width:"40%", height:"40%",}}/>
+                        <img className={this.props.classes.cSquare} src={require('../img/Aindra.jpg')} style={{width:"40%", height:"40%",}}/>
+                        <img className={this.props.classes.cSquare} src={require('../img/Maxwell.jpg')} style={{width:"40%", height:"40%",}}/>
+                        <img className={this.props.classes.cSquare} src={require('../img/Cindy.jpg')} style={{width:"40%", height:"40%",}}/>
+                    </div>
+
+                    <h2> The Team </h2>
+                    <p id="teamtxt"> 
+                        We are seniors at the University of Washington's Information School! From left to right, top to bottom, we are 
+                        Royce, Aindra, Max, and Cee! We're all dedicated and passionate about making a difference through the lens of technology.
+                        We decided to develop Grandma's House because we reccognized an opportunity to unite people from all different backgrounds
+                        through a mutual love for food! 
+                    </p>
+                    <div >
+                        {/* <img className={this.props.classes.cSquare} src={require('../img/Royboy.jpg')}/>
+                        <img className={this.props.classes.cSquare} src={require('../img/Aindra.jpg')}/>
+                        <img className={this.props.classes.cSquare} src={require('../img/Maxwell.jpg')}/>
+                        <img className={this.props.classes.cSquare} src={require('../img/Cindy.jpg')}/> */}
+                    </div>
+                </section>
                 <section id="FAQSection">
                     <FAQ />
                 </section>
@@ -56,4 +91,4 @@ Grandma’s House fosters a greater sense of community, because when it comes to
     }
 }
 
-export default LandingPage
+export default withStyles(styles)(LandingPage);
