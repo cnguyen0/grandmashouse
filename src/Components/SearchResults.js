@@ -4,7 +4,7 @@ import { withStyles } from 'material-ui/styles';
 import ListingCard from './ListingCard';
 import Typography from 'material-ui/Typography/Typography';
 import { allItems } from './LocalDatabase';
-
+import MyMapComponent from './MyMapComponent.js';
 // ROUTE localhost:3000/search?
 
 
@@ -26,7 +26,13 @@ const styles = theme => ({
 	},
 		subheader: {
 			width: '100%',
-	}
+	},
+	searchMap: {
+		clear: "both"
+	},
+	rowC: {
+			display:'flex', 
+			flexDirection:'row'}
 });
 
 
@@ -47,6 +53,7 @@ class SearchResults extends React.Component {
 
 	render() {
 		return (
+			<div>
 				<div style={{margin: '20px'}}>
 						<Typography variant="headline" component="h1" style={{marginBottom: '20px'}}>Search Results for: {this.props.query || "Pasta"}</Typography>
 						<div className="row around-s">
@@ -59,8 +66,11 @@ class SearchResults extends React.Component {
 								</div>
 							)})
 						}
+										<div style={{float:'left', position:'relative', right:'-8px', top:'-8px'}}><MyMapComponent /> </div>
+										<div style={{marginBottom: '800px'}}></div>
 						</div>
 				</div>
+			</div>
 		)
 	}
 }
