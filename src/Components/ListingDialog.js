@@ -150,7 +150,7 @@ class FullScreenDialog extends React.Component {
                 <div className="box">
                   <Paper className={classes.root}  elevation={4}>
                     <Typography variant="headline" component="h1">
-                      {this.props.item.title + ' | ' + this.props.item.price}
+                      {this.props.item.title + ' | $' + this.props.item.price}
                     </Typography>
                     <Typography variant="headline" component="h1">
                       {this.props.item.city + ', ' + this.props.item.state}

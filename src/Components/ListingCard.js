@@ -77,9 +77,7 @@ class ListingCard extends React.Component {
           />
           <CardContent>
             <Typography component="p">
-              Not quite sure what to put in this space. I wanted it to be empty but it makes the cards smaller
-              and I dont like that at all. So I was thinking we can perhaps add more information or description
-              from the favorites you know?
+              {this.props.item.description}
             </Typography>
           </CardContent>
         </Card>

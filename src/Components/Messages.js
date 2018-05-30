@@ -1,21 +1,3 @@
-/*
-import React from 'react';
-
-// ROUTE localhost:3000/messages
-class Messages extends React.Component {
-    render() {
-        return (
-            <div>
-                Messages
-            </div>
-        )
-    }
-}
-
-export default Messages
-
-*/
-
 import React from 'react';
 import PropTypes from 'prop-types';
 import { withStyles } from 'material-ui/styles';
@@ -51,11 +33,21 @@ const styles = theme => ({
   }
 });
 
+
 class Messages extends React.Component {
     
   state = {
     expanded: null,
+    value1: ''
   };
+
+  _handleKeyPress = (e) => {
+    if (e.key === 'Enter') {
+      this.setState({value1: ''});
+      var div = document.getElementById('appendhere');
+      div.innerHTML += 'You: ' + e.target.value;
+    }
+  }
 
   handleChange = panel => (event, expanded) => {
     this.setState({
@@ -78,16 +70,20 @@ class Messages extends React.Component {
             <Typography>
               Hello! Thank you for buying some scones from me yesterday! How were they? Do you think adding dried fruit would make them better?
             </Typography>
+            <div id='appendhere' style={{clear: 'both', display: 'block'}}></div>
             <TextField
-          id="full-width"
-          label="Reply"
-          InputLabelProps={{
-            shrink: true,
-          }}
-          placeholder="Hello!"
-          fullWidth
-          margin="normal"
-        />
+              id="full-width"
+              label="Reply"
+              InputLabelProps={{
+                shrink: true,
+              }}
+              placeholder="Hello!"
+              fullWidth
+              margin="normal"
+              value={this.state.value1}
+              onChange={(e) => this.setState({value1: e.target.value})}
+              onKeyPress={this._handleKeyPress}
+            />
           </ExpansionPanelDetails>
         </ExpansionPanel>
         <ExpansionPanel expanded={expanded === 'panel2'} className={classes.panel2} onChange={this.handleChange('panel2')}>
@@ -103,15 +99,15 @@ class Messages extends React.Component {
             </Typography>
           </ExpansionPanelDetails>
           <TextField
-          id="full-width"
-          label="Reply"
-          InputLabelProps={{
-            shrink: true,
-          }}
-          placeholder="Hello!"
-          fullWidth
-          margin="normal"
-        />
+            id="full-width"
+            label="Reply"
+            InputLabelProps={{
+              shrink: true,
+            }}
+            placeholder="Hello!"
+            fullWidth
+            margin="normal"
+          />
         </ExpansionPanel>
         <ExpansionPanel expanded={expanded === 'panel3'} className={classes.panel1} onChange={this.handleChange('panel3')}>
           <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
@@ -126,15 +122,15 @@ class Messages extends React.Component {
             </Typography>
           </ExpansionPanelDetails>
           <TextField
-          id="full-width"
-          label="Reply"
-          InputLabelProps={{
-            shrink: true,
-          }}
-          placeholder="Hello!"
-          fullWidth
-          margin="normal"
-        />
+            id="full-width"
+            label="Reply"
+            InputLabelProps={{
+              shrink: true,
+            }}
+            placeholder="Hello!"
+            fullWidth
+            margin="normal"
+          />
         </ExpansionPanel>
         <ExpansionPanel expanded={expanded === 'panel3'} className={classes.panel2} onChange={this.handleChange('panel3')}>
           <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>

@@ -59,7 +59,7 @@ Grandma’s House fosters a greater sense of community, because when it comes to
                         <i className="fas fa-utensils"></i>
                     </div>                
                     <h2>Our Values</h2>
-                    <p>Here at Grandma's House, we strongly believe in cultivating and empowering local communities. By doing so, we care a lot in the home chefs who sign up on our platform by protecting them from harm and ensuring they are earning profit in what they love. We created a donation system to ensure not only chef are getting their money, but eaters are able to pay more if they believe service and food quality is exceptional. Our home chefs are what ties the community together so it is important to keep our chefs safe.</p>  
+                    <p style={{fontSize: '20px'}}>Here at Grandma's House, we strongly believe in cultivating and empowering local communities. By doing so, we care a lot in the home chefs who sign up on our platform by protecting them from harm and ensuring they are earning profit in what they love. We created a donation system to ensure not only chef are getting their money, but eaters are able to pay more if they believe service and food quality is exceptional. Our home chefs are what ties the community together so it is important to keep our chefs safe.</p>  
                 </section>
                 <section id="team">
                     <div className="fa-home-con">
@@ -76,6 +76,7 @@ Grandma’s House fosters a greater sense of community, because when it comes to
                         We decided to develop Grandma's House because we reccognized an opportunity to unite people from all different backgrounds
                         through a mutual love for food! 
                     </p>
+                    <div style={{clear: 'both'}}></div>
                     <div >
                         {/* <img className={this.props.classes.cSquare} src={require('../img/Royboy.jpg')}/>
                         <img className={this.props.classes.cSquare} src={require('../img/Aindra.jpg')}/>

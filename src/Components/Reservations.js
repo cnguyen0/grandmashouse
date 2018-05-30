@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { withStyles } from 'material-ui/styles';
 import ReservationItem from './ReservationItem';
 
-import { reservations } from './LocalDatabase';
+import { reservations, allItems } from './LocalDatabase';
 
 // ROUTE localhost:3000/reservations
 
@@ -29,29 +29,8 @@ const styles = theme => ({
 });
 
 class Reservations extends React.Component {
-    userFave = {
-        id: 1,
-        title: 'Garlic Pasta',
-        image: ["https://img.sndimg.com/food/image/upload/w_896,h_504,c_fill,fl_progressive,q_80/v1/img/recipes/14/81/72/vNuD41wlTe4jnwh8XngJ_Food-com-2017-05-311586.jpg", "https://img.sndimg.com/food/image/upload/w_896,h_504,c_fill,fl_progressive,q_80/v1/img/recipes/14/81/72/vNuD41wlTe4jnwh8XngJ_Food-com-2017-05-311586.jpg"],
-        description: 'Not quite sure what to put in this space. I wanted it to be empty but it makes the cards smaller and I dont like that at all. So I was thinking we can perhaps add more information or description from the favorites you know?',
-        price: '$10',
-        city: 'Seattle',
-        state: 'WA',
-        zip: 98105,
-        chef: {
-            firstName: 'Frank',
-            lastName: 'Tomato',
-            bio: 'This is my bio and I have been cooking for this many years and so forth.',
-            img: 'http://www.lovemarks.com/wp-content/uploads/profile-avatars/default-avatar-ponsy-deer.png',
-            phoneNumber: 1111111111
-        }
-    }
-
-    rsvpItem = {
-        quantity: 1,
-        pickUpTime: 'idk time format',
-        price: '$10',
-        listingID: 1
+    getItem(id) {
+        return allItems.find(function(itm) { if (itm.id === id) return itm;});
     }
 
     render() {
@@ -59,7 +38,7 @@ class Reservations extends React.Component {
             <div>
                 { reservations.length === 0 ? 'You currently have no reservations. Make your first reservations today!' :
                     reservations.map((rsvp, i) => {
-                        return (<ReservationItem item={this.userFave} rsvp={rsvp} />  )
+                        return (<ReservationItem item={this.getItem(rsvp.listingID)} rsvp={rsvp} />  )
                     })                 
                 }
             </div>
